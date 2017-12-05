@@ -40,7 +40,7 @@
     	  <div class="container-fluid">
     		    <div class="navbar-header">
 								<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
-									//hamburger icon
+									<!-- cd-faq-content -->
 									<span class="icon-bar"></span>
 							 		<span class="icon-bar"></span>
 							 		<span class="icon-bar"></span>

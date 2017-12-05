@@ -23,20 +23,21 @@
     	  <div class="container-fluid">
     		    <div class="navbar-header">
 								<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
-									<span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+									<!-- cd-faq-content -->
+									<span class="icon-bar"></span>
+							 		<span class="icon-bar"></span>
+							 		<span class="icon-bar"></span>
 								</button>
-    		        <a class="navbar-brand" href="#">Equipos deportivos</a>
+    		        <a class="navbar-brand" href="<?= site_url('web') ?>">Equipos deportivos</a>
     		    </div>
 					<div class="collapse navbar-collapse" id="mainNavBar">
     		    <ul class="nav navbar-nav">
-        		  <li><a href="<?= site_url('web') ?>">Inicio</a></li>
         		  <li><a href="<?= site_url('web/noticias') ?>">Noticias</a></li>
         		  <li><a href="<?= site_url('web/galeria') ?>">Galería</a></li>
 							<li><a href="<?= site_url('web/eventos') ?>">Eventos</a></li>
 							<li><a href="<?= site_url('web/clasificados') ?>">Clasificados</a></li>
 							<li><a href="<?= site_url('web/contacto') ?>">Contacto</a></li>
 							<li><a href="<?= site_url('web/faq') ?>">FAQ</a></li>
-							<li><a href="<?= site_url('admin') ?>">Admin</a></li>
     		    </ul>
     		    <ul class="nav navbar-nav navbar-right">
 							<?php if ($this->session->userdata('cedula')){ ?>
@@ -45,7 +46,6 @@
 								<li><a href="<?= site_url('register') ?>"><span class="glyphicon glyphicon-user"></span> Registrarse</a></li>
 	        		  <li><a href="<?= site_url('login') ?>"><span class="glyphicon glyphicon-log-in"></span> Iniciar sesión</a></li>
 							<?php } ?>
-
     		    </ul>
 					</div>
     	  </div>
