@@ -29,7 +29,7 @@
     		    </div>
 					<div class="collapse navbar-collapse" id="mainNavBar">
     		    <ul class="nav navbar-nav">
-        		  <li><a href="#">Inicio</a></li>
+        		  <li><a href=<?php baseurl(); ?>>Inicio</a></li>
         		  <li><a href="#">Noticias</a></li>
         		  <li><a href="#">Galería</a></li>
 							<li><a href="#">Eventos</a></li>
@@ -39,7 +39,7 @@
 							<li><a href="#">Admin</a></li>
     		    </ul>
     		    <ul class="nav navbar-nav navbar-right">
-        		  <li><a href="#"><span class="glyphicon glyphicon-user"></span> Registrarse</a></li>
+        		  <li><a href="<?php echo "#"; ?>"><span class="glyphicon glyphicon-user"></span> Registrarse</a></li>
         		  <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Iniciar sesión</a></li>
     		    </ul>
 					</div>
