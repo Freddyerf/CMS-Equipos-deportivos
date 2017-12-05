@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Problemas viales</title>
+		<title>CMS</title>
 		<style>
 			.centro{
 				min-height: 300px;
