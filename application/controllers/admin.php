@@ -28,4 +28,46 @@ class Admin extends CI_Controller{
     $this->load->view('admin/plantilla/pie_adm');
   }
 
+  public function miembros(){
+    $this->load->view('admin/plantilla/encabezado_adm');
+    $this->load->view('admin/miembros_adm_view');
+    $this->load->view('admin/plantilla/pie_adm');
+  }
+
+  public function galeria(){
+    $this->load->view('admin/plantilla/encabezado_adm');
+    $this->load->view('admin/galeria_adm_view');
+    $this->load->view('admin/plantilla/pie_adm');
+  }
+
+  public function clasificados(){
+    $this->load->view('admin/plantilla/encabezado_adm');
+    $this->load->view('admin/clasificados_adm_view');
+    $this->load->view('admin/plantilla/pie_adm');
+  }
+
+  public function contacto(){
+    $this->load->view('admin/plantilla/encabezado_adm');
+    $this->load->view('admin/contacto_adm_view');
+    $this->load->view('admin/plantilla/pie_adm');
+  }
+
+  public function faq(){
+    $this->load->view('admin/plantilla/encabezado_adm');
+    $this->load->view('admin/faq_adm_view');
+    $this->load->view('admin/plantilla/pie_adm');
+  }
+
+  public function administradores(){
+    $this->load->view('admin/plantilla/encabezado_adm');
+    $this->load->view('admin/admin_adm_view');
+    $this->load->view('admin/plantilla/pie_adm');
+  }
+
+  public function parametros(){
+    $this->load->view('admin/plantilla/encabezado_adm');
+    $this->load->view('admin/parametros_adm_view');
+    $this->load->view('admin/plantilla/pie_adm');
+  }
+
 }

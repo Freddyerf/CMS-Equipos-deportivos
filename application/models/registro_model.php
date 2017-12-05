@@ -7,23 +7,11 @@ class Registro_model extends CI_Model{
 		parent::__construct();
 	}
 
-	public function registrar($email,$password,$cedula,$nombre,$apellido,$tel,$direccion,$lat,$long){
-		$password = md5($password);
-    $sql = "INSERT INTO usuarios(correo,password,cedula,nombre,apellido,telefono,direccion,latitud,longitud)"
-            ." values('{$email}', '{$password}', '{$cedula}', '{$nombre}', '{$apellido}', '{$tel}', '{$direccion}', '{$lat}', '{$long}')";
+	public function registrar($cedula,$nombre,$apellido,$tel,$email,$direccion,$lat,$long){
+    $sql = "INSERT INTO usuarios(cedula,nombre,apellido,telefono,correo,direccion,latitud,longitud)"
+            ." values('{$cedula}', '{$nombre}', '{$apellido}', '{$tel}', '{$email}', '{$direccion}', '{$lat}', '{$long}')";
 		$this->db->query($sql);
 
-	}
-
-	public function verificarPass($pass1,$pass2){
-		$rs = false;
-		//verificar que coincidan las contraseñas
-		if($pass1 == $pass2){
-			$rs = true;
-		}else{
-			$rs = false;
-		}
-		return $rs;
 	}
 
   public function verificarCorreo($email){
