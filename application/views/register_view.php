@@ -25,40 +25,40 @@
 
 	input[type="text"],
 	input[type="password"],
-	input[type="date"],
+ 	input[type="date"],
 	input[type="datetime"],
 	input[type="email"],
 	input[type="number"],
 	input[type="search"],
 	input[type="tel"],
 	input[type="time"],
-	input[type="url"],
-	textarea,
-	select {
-	  background: rgba(255,255,255,0.1);
-	  border: none;
+ 	input[type="url"],
+ 	textarea,
+ 	select {
+ 	  background: rgba(255,255,255,0.1);
+ 	  border: none;
 	  font-size: 16px;
-	  height: auto;
-	  margin: 0;
-	  outline: 0;
-	  padding: 15px;
-	  width: 100%;
-	  background-color: #e8eeef;
-	  color: #8a97a0;
-	  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
-	  margin-bottom: 30px;
-	}
+ 	  height: auto;
+ 	  margin: 0;
+ 	  outline: 0;
+ 	  padding: 15px;
+ 	  width: 100%;
+ 	  background-color: #e8eeef;
+ 	  color: #8a97a0;
+ 	  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+ 	  margin-bottom: 30px;
+ 	}
 
-	input[type="radio"],
-	input[type="checkbox"] {
-	  margin: 0 4px 8px 0;
-	}
+ 	input[type="radio"],
+ 	input[type="checkbox"] {
+ 	  margin: 0 4px 8px 0;
+ 	}
 
-	select {
-	  padding: 6px;
-	  height: 32px;
-	  border-radius: 2px;
-	}
+ 	select {
+ 	  padding: 6px;
+ 	  height: 32px;
+ 	  border-radius: 2px;
+ 	}
 
 	button {
 	  padding: 19px 39px 18px 39px;
@@ -134,20 +134,14 @@
     <input type="text" id="apellido" name="user_apellido">
 
 		<label for="tel">Teléfono:</label>
-    <input type="text" id="tel" name="user_tel">
+    <input type="tel" id="tel" name="user_tel">
 
     <label for="mail">Correo electrónico:</label>
     <input type="email" id="mail" name="user_email" required>
-
-    <label for="password">Contraseña:</label>
-    <input type="password" id="password" name="user_password" required>
-
-		<label for="password1">Confirmar contraseña:</label>
-    <input type="password" id="password1" name="user_password1" required>
   </fieldset>
 
   <fieldset>
-  	<legend><span class="number">2</span>Información avanzada</legend>
+  	<legend><span class="number">2</span>Información secundaria</legend>
 		<label for="direccion">Dirección:</label>
     <input type="text" id="direccion" name="user_direccion">
 
