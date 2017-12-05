@@ -22,10 +22,11 @@ class Login extends CI_Controller{
 				$this->session->set_userdata('cedula', $_POST['user_cedula']);
 
 				$results = $this->db->query("SELECT * from usuarios WHERE cedula='{$_POST['user_cedula']}'")->result_array();
-				$this->session->set_userdata('id_usuario', $results[0]['id_usuario']);
-				redirect('web');
+				$this->session->set_userdata('cedula', $results[0]['cedula']);
+				$this->session->set_userdata('admin', $results[0]['admin']);
+				redirect('admin');
 			}else{
-				redirect('login');
+				echo "<script>alert('¡Credenciales incorrectas!')</script>";
 			}
 		}
 

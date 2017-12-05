@@ -10,6 +10,7 @@ class Usuario_model extends CI_Model{
 	public function autenticar($cedula,$password){
 		$this->db->where('cedula',$cedula);
 		$this->db->where('password',md5($password));
+		$this->db->where('admin',1);
 		$results = $this->db->get('usuarios');
 		if($results->num_rows()>0){
 			return true;
