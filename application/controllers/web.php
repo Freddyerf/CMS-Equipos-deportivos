@@ -8,12 +8,8 @@ class Web extends CI_Controller{
 	}
 
 	function index(){
-		if(!$this->session->userdata('cedula') ){
-			redirect('login');
-		}else{
 		$this->load->view('plantilla/encabezado');
 		$this->load->view('inicio_view');
 		$this->load->view('plantilla/pie');
-		}
 	}
 }

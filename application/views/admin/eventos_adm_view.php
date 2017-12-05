@@ -1,3 +1,10 @@
+<style>
+hr {
+  border: 0.5px solid #282726;
+  width: 80%;
+}
+</style>
+
 <div class="container">
   <h2><center>Agregar evento</center></h2>
   <hr/>
