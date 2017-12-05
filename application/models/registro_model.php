@@ -7,9 +7,11 @@ class Registro_model extends CI_Model{
 		parent::__construct();
 	}
 
-	public function registrar($email,$password){
+	public function registrar($email,$password,$cedula,$nombre,$apellido,$tel,$direccion,$lat,$long){
 		$password = md5($password);
-		$this->db->query("INSERT INTO usuarios(correo,password) values('{$email}', '{$password}')");
+    $sql = "INSERT INTO usuarios(correo,password,cedula,nombre,apellido,telefono,direccion,latitud,longitud)"
+            ." values('{$email}', '{$password}', '{$cedula}', '{$nombre}', '{$apellido}', '{$tel}', '{$direccion}', '{$lat}', '{$long}')";
+		$this->db->query($sql);
 
 	}
 
@@ -24,7 +26,7 @@ class Registro_model extends CI_Model{
 		return $rs;
 	}
 
-	public function verificarCorreo($email){
+  public function verificarCorreo($email){
 		$rs = true;
 		//verificar que no exista otro correo
 		$this->db->where('correo',$email);
@@ -34,6 +36,9 @@ class Registro_model extends CI_Model{
 		}else{
 			$rs = true;
 		}
+
+		return $rs;
+	}
 
     public function verificarCedula($cedula){
       $rs = true;
