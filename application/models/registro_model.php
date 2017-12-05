@@ -8,7 +8,7 @@ class Registro_model extends CI_Model{
 	}
 
 	public function registrar($cedula,$nombre,$apellido,$tel,$email,$direccion,$lat,$long){
-    $sql = "INSERT INTO usuarios(correo,password,cedula,nombre,apellido,telefono,direccion,latitud,longitud)"
+    $sql = "INSERT INTO usuarios(cedula,nombre,apellido,telefono,correo,direccion,latitud,longitud)"
             ." values('{$cedula}', '{$nombre}', '{$apellido}', '{$tel}', '{$email}', '{$direccion}', '{$lat}', '{$long}')";
 		$this->db->query($sql);
 

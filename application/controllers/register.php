@@ -25,7 +25,7 @@ class Register extends CI_Controller{
             $lat = $_POST['user_latitud'];
             $long = $_POST['user_longitud'];
 
-            $this->registro_model->registrar($email,$pass,$ced,$name,$apell,$tel,$direc,$lat,$long);
+            $this->registro_model->registrar($ced,$name,$apell,$tel,$email,$direc,$lat,$long);
     				redirect('login');
 
           }else{

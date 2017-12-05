@@ -8,9 +8,9 @@ class Web extends CI_Controller{
 	}
 
 	function index(){
-		$this->load->view('plantillaencabezado');
+		$this->load->view('plantilla/encabezado');
 		$this->load->view('inicio_view');
-		$this->load->view('plantillapie');
+		$this->load->view('plantilla/pie');
 	}
 
 	public function noticias(){
