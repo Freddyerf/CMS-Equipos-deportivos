@@ -36,7 +36,7 @@
 							<li><a href="#">Clasificados</a></li>
 							<li><a href="#">Contacto</a></li>
 							<li><a href="#">FAQ</a></li>
-							<li><a href="#">Admin</a></li>
+							<li><a href="<?= site_url('admin') ?>">Admin</a></li>
     		    </ul>
     		    <ul class="nav navbar-nav navbar-right">
         		  <li><a href="<?= site_url('register') ?>"><span class="glyphicon glyphicon-user"></span> Registrarse</a></li>

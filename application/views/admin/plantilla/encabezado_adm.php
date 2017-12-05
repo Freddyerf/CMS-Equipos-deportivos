@@ -48,10 +48,10 @@
     		    </div>
 					<div class="collapse navbar-collapse" id="mainNavBar">
     		    <ul class="nav navbar-nav">
-        		  <li><a href="#">Noticias</a></li>
+        		  <li><a href="<?= site_url('admin/noticias') ?>">Noticias</a></li>
         		  <li><a href="#">Miembros</a></li>
 							<li><a href="#">Galería</a></li>
-							<li><a href="#">Eventos</a></li>
+							<li><a href="<?= site_url('admin/eventos') ?>">Eventos</a></li>
 							<li><a href="#">Clasificados</a></li>
 							<li><a href="#">Contacto</a></li>
 							<li><a href="#">FAQ</a></li>
