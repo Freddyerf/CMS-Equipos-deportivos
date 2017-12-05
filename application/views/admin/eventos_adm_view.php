@@ -16,11 +16,11 @@ hr {
       </div>
       <div class="form-group input-group">
         <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-        <input id="fecha" type="text" class="form-control" name="fecha" placeholder="Fecha" required>
+        <input id="fecha" type="date" class="form-control" name="fecha" value="<?=date("Y-m-d")?>" required>
       </div>
       <div class="form-group input-group">
         <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
-        <input id="hora" type="text" class="form-control" name="hora" placeholder="Hora" required>
+        <input id="hora" type="time" class="form-control" name="hora" value="<?=date("h:i")?>" required>
       </div>
       <div class="form-group input-group">
         <span class="input-group-addon"><span class="glyphicon glyphicon-picture"></span></span>
@@ -29,6 +29,10 @@ hr {
       <div>
         <h4>Descripción del evento:</h4>
         <textarea id="descripcion" name="descripcion"></textarea>
+      </div>
+      <br>
+      <div>
+        <center><button type="submit" class="btn btn-success">Publicar</button></center>
       </div>
     </div>
   </form>
