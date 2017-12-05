@@ -12,6 +12,25 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 
+		<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+		<script>
+		tinymce.init({
+			selector:'textarea',
+			height: 250,
+			theme: 'modern',
+			plugins: [
+				'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+				'searchreplace wordcount visualblocks visualchars code fullscreen',
+				'insertdatetime media nonbreaking save table contextmenu directionality',
+				'emoticons template paste textcolor colorpicker textpattern imagetools'
+			],
+			toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+			toolbar2: 'forecolor backcolor emoticons',
+
+		});
+		</script>
+
+
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
