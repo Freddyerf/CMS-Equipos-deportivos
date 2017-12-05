@@ -30,12 +30,12 @@
 					<div class="collapse navbar-collapse" id="mainNavBar">
     		    <ul class="nav navbar-nav">
         		  <li><a href="<?= site_url('web') ?>">Inicio</a></li>
-        		  <li><a href="#">Noticias</a></li>
-        		  <li><a href="#">Galería</a></li>
-							<li><a href="#">Eventos</a></li>
-							<li><a href="#">Clasificados</a></li>
-							<li><a href="#">Contacto</a></li>
-							<li><a href="#">FAQ</a></li>
+        		  <li><a href="<?= site_url('web/noticias') ?>">Noticias</a></li>
+        		  <li><a href="<?= site_url('web/galeria') ?>">Galería</a></li>
+							<li><a href="<?= site_url('web/eventos') ?>">Eventos</a></li>
+							<li><a href="<?= site_url('web/clasificados') ?>">Clasificados</a></li>
+							<li><a href="<?= site_url('web/contacto') ?>">Contacto</a></li>
+							<li><a href="<?= site_url('web/faq') ?>">FAQ</a></li>
 							<li><a href="<?= site_url('admin') ?>">Admin</a></li>
     		    </ul>
     		    <ul class="nav navbar-nav navbar-right">

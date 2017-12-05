@@ -49,14 +49,14 @@
 					<div class="collapse navbar-collapse" id="mainNavBar">
     		    <ul class="nav navbar-nav">
         		  <li><a href="<?= site_url('admin/noticias') ?>">Noticias</a></li>
-        		  <li><a href="#">Miembros</a></li>
-							<li><a href="#">Galería</a></li>
+        		  <li><a href="<?= site_url('admin/miembros') ?>">Miembros</a></li>
+							<li><a href="<?= site_url('admin/galeria') ?>">Galería</a></li>
 							<li><a href="<?= site_url('admin/eventos') ?>">Eventos</a></li>
-							<li><a href="#">Clasificados</a></li>
-							<li><a href="#">Contacto</a></li>
-							<li><a href="#">FAQ</a></li>
-							<li><a href="#">Admin</a></li>
-							<li><a href="#">Parámetros</a></li>
+							<li><a href="<?= site_url('admin/clasificados') ?>">Clasificados</a></li>
+							<li><a href="<?= site_url('admin/contacto') ?>">Contacto</a></li>
+							<li><a href="<?= site_url('admin/faq') ?>">FAQ</a></li>
+							<li><a href="<?= site_url('admin/administradores') ?>">Admin</a></li>
+							<li><a href="<?= site_url('admin/parametros') ?>">Parámetros</a></li>
     		    </ul>
     		    <ul class="nav navbar-nav navbar-right">
         		  <li><a href="<?= site_url('register') ?>"><span class="glyphicon glyphicon-user"></span> Registrarse</a></li>
