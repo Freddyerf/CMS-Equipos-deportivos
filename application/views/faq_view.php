@@ -1,10 +1,8 @@
-<!doctype html>
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
-
-<link rel="stylesheet" href="assets/css/reset.css"> <!-- CSS reset -->
-<link rel="stylesheet" href="assets/css/style.css"> <!-- Resource style -->
 <script src="assets/js/modernizr.js"></script> <!-- Modernizr -->
+<link rel="stylesheet" href="assets/css/style.css"> <!-- Resource style -->
+<link rel="stylesheet" href="assets/css/reset.css"> <!-- CSS reset -->
 
+<div class="container">
 <section class="cd-faq">
 <ul class="cd-faq-categories">
 	<li><a class="selected" href="#basics">Basics</a></li>
@@ -44,13 +42,6 @@
 			<a class="cd-faq-trigger" href="#0">How do I upload files from my phone or tablet?</a>
 			<div class="cd-faq-content">
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi tempore, placeat quisquam rerum! Eligendi fugit dolorum tenetur modi fuga nisi rerum, autem officiis quaerat quos. Magni quia, quo quibusdam odio. Error magni aperiam amet architecto adipisci aspernatur! Officia, quaerat magni architecto nostrum magnam fuga nihil, ipsum laboriosam similique voluptatibus facilis nobis? Eius non asperiores, nesciunt suscipit veniam blanditiis veritatis provident possimus iusto voluptas, eveniet architecto quidem quos molestias, aperiam eum reprehenderit dolores ad deserunt eos amet. Vero molestiae commodi unde dolor dicta maxime alias, velit, nesciunt cum dolorem, ipsam soluta sint suscipit maiores mollitia assumenda ducimus aperiam neque enim! Quas culpa dolorum ipsam? Ipsum voluptatibus numquam natus? Eligendi explicabo eos, perferendis voluptatibus hic sed ipsam rerum maiores officia! Beatae, molestias!</p>
-			</div> <!-- cd-faq-content -->
-		</li>
-
-		<li>
-			<a class="cd-faq-trigger" href="#0">How do I link to a file or folder?</a>
-			<div class="cd-faq-content">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis provident officiis, reprehenderit numquam. Praesentium veritatis eos tenetur magni debitis inventore fugit, magnam, reiciendis, saepe obcaecati ex vero quaerat distinctio velit.</p>
 			</div> <!-- cd-faq-content -->
 		</li>
 	</ul> <!-- cd-faq-group -->
@@ -99,8 +90,7 @@
 </div> <!-- cd-faq-items -->
 
 </section> <!-- cd-faq -->
+</div>
 <script src="assets/js/jquery-2.1.1.js"></script>
 <script src="assets/js/jquery.mobile.custom.min.js"></script>
 <script src="assets/js/main.js"></script> <!-- Resource jQuery -->
-</body>
-</html>
