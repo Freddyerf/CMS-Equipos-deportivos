@@ -39,8 +39,13 @@
 							<li><a href="<?= site_url('admin') ?>">Admin</a></li>
     		    </ul>
     		    <ul class="nav navbar-nav navbar-right">
-        		  <li><a href="<?= site_url('register') ?>"><span class="glyphicon glyphicon-user"></span> Registrarse</a></li>
-        		  <li><a href="<?= site_url('login') ?>"><span class="glyphicon glyphicon-log-in"></span> Iniciar sesión</a></li>
+							<?php if ($this->session->userdata('cedula')){ ?>
+								<li><a href="<?= site_url('login/logout') ?>"><span class="glyphicon glyphicon-log-out"></span> Cerrar sesión</a></li>
+							<?php }else{ ?>
+								<li><a href="<?= site_url('register') ?>"><span class="glyphicon glyphicon-user"></span> Registrarse</a></li>
+	        		  <li><a href="<?= site_url('login') ?>"><span class="glyphicon glyphicon-log-in"></span> Iniciar sesión</a></li>
+							<?php } ?>
+
     		    </ul>
 					</div>
     	  </div>
