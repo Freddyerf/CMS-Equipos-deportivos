@@ -15,6 +15,12 @@ class Admin_model extends CI_Model{
 
   }
 
+  public function guardarEvento($titulo,$fecha,$hora,$foto,$cuerpo){
+    $sql = "INSERT INTO eventos(titulo,fecha,hora,foto,cuerpo) values(?, ?, ?, ?, ?)";
+    $this->db->query($sql, array($titulo,$fecha,$hora,$foto,$cuerpo));
+
+  }
+
   public function mostrarNoticias(){
 
   }
