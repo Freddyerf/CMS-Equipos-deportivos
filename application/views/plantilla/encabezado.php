@@ -39,8 +39,8 @@
 							<li><a href="#">Admin</a></li>
     		    </ul>
     		    <ul class="nav navbar-nav navbar-right">
-        		  <li><a href="#"><span class="glyphicon glyphicon-user"></span> Registrarse</a></li>
-        		  <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Iniciar sesión</a></li>
+        		  <li><a href="<?= site_url('register') ?>"><span class="glyphicon glyphicon-user"></span> Registrarse</a></li>
+        		  <li><a href="<?= site_url('login') ?>"><span class="glyphicon glyphicon-log-in"></span> Iniciar sesión</a></li>
     		    </ul>
 					</div>
     	  </div>
