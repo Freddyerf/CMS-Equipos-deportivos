@@ -39,7 +39,7 @@
 							<li><a href="#">Admin</a></li>
     		    </ul>
     		    <ul class="nav navbar-nav navbar-right">
-        		  <li><a href="<?php echo "#"; ?>"><span class="glyphicon glyphicon-user"></span> Registrarse</a></li>
+        		  <li><a href="<?php echo baseurl(); ?>"><span class="glyphicon glyphicon-user"></span> Registrarse</a></li>
         		  <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Iniciar sesión</a></li>
     		    </ul>
 					</div>
