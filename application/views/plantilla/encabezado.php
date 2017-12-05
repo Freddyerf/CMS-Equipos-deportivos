@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8">
+		<meta charset="UTF-8">
 		<title>Problemas viales</title>
 		<style>
 			.centro{
@@ -9,6 +9,7 @@
 				margin-top: 50px;
 			}
 		</style>
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	</head>
 	<body style="background-color: rgb(239, 239, 239);">
@@ -16,7 +17,7 @@
       <nav class="navbar navbar-inverse navbar-fixed-top">
     	  <div class="container-fluid">
     		    <div class="navbar-header">
-    		        <a class="active" href="#">Equipos deportivos</a>
+    		        <a class="navbar-brand" href="#">Equipos deportivos</a>
     		    </div>
     		    <ul class="nav navbar-nav">
         		  <li><a href="#">Inicio</a></li>
