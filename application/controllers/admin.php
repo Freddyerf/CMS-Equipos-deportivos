@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+
 class Admin extends CI_Controller{
 
   public function __construct()
@@ -107,6 +108,18 @@ class Admin extends CI_Controller{
   }
 
   public function parametros(){
+
+    if(isset($_POST['actualizar'])){
+
+      $infobdd = "<?php
+define('TITULO','{$_POST['titulo']}');
+define('EQUIPO','{$_POST['nombre']}');
+define('LOGO','{$_FILES['foto']['name']}');
+			";
+
+			file_put_contents("application/config/settings.php",$infobdd);
+    }
+
     $this->load->view('admin/plantilla/encabezado_adm');
     $this->load->view('admin/parametros_adm_view');
     $this->load->view('admin/plantilla/pie_adm');

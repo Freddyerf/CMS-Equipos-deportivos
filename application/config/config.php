@@ -1,5 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+include("application/config/settings.php");
 
 /*
 |--------------------------------------------------------------------------
@@ -521,3 +522,8 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
+
+
+$config['titulo'] = TITULO;
+$config['equipo'] = EQUIPO;
+$config['logo'] = LOGO;
