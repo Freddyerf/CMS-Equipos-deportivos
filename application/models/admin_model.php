@@ -48,12 +48,6 @@ class Admin_model extends CI_Model{
     $sql = "DELETE FROM noticias WHERE id_noticia = ?";
 		$this->db->query($sql, $id);
   }
-  /*
-  *
-  * FIN MÉTODOS DE NOTICIAS
-  *
-  */
-
 
 
   /*
@@ -95,11 +89,24 @@ class Admin_model extends CI_Model{
     $sql = "DELETE FROM eventos WHERE id_evento = ?";
     $this->db->query($sql, $id);
   }
+
+
   /*
   *
-  * FIN MÉTODOS DE EVENTOS
+  * MÉTODOS DE CONTACTO
   *
   */
+  public function mostrarContactos(){
+    $this->db->select('id_contacto,nombre,correo,mensaje');
+    $query = $this->db->get('contactos')->result();
+
+    return $query;
+  }
+
+  public function eliminarContacto($id){
+    $sql = "DELETE FROM contactos WHERE id_contacto = ?";
+    $this->db->query($sql, $id);
+  }
 
 
 }
