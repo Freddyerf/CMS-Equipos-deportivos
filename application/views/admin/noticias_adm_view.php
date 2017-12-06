@@ -25,6 +25,10 @@ hr {
         <h4>Cuerpo de la noticia:</h4>
         <textarea id="texto" name="texto"></textarea>
       </div>
+      <br>
+      <div>
+        <center><button type="submit" class="btn btn-success">Publicar</button></center>
+      </div>
     </div>
   </form>
 </div>

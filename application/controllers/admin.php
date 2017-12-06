@@ -6,7 +6,7 @@ class Admin extends CI_Controller{
   public function __construct()
   {
     parent::__construct();
-
+    $this->load->model('admin_model');
   }
 
   function index()
@@ -17,12 +17,45 @@ class Admin extends CI_Controller{
   }
 
   public function noticias(){
+
+    if(isset($_POST['titulo'])){
+
+      $titulo = $_POST['titulo'];
+      $resumen = $_POST['resumen'];
+      $texto = $_POST['texto'];
+      $foto = $_FILES['foto']['name'];
+
+      if($_FILES['foto']['error']==0){ //SI NO HAY ERRORES
+        $this->admin_model->guardarNoticia($titulo,$resumen,$foto,$texto);
+        redirect('admin/noticias');
+      }
+
+    }
+
+
     $this->load->view('admin/plantilla/encabezado_adm');
     $this->load->view('admin/noticias_adm_view');
     $this->load->view('admin/plantilla/pie_adm');
   }
 
   public function eventos(){
+
+    if(isset($_POST['titulo'])){
+
+      $titulo = $_POST['titulo'];
+      $fecha = $_POST['fecha'];
+      $hora = $_POST['hora'];
+      $descripcion = $_POST['descripcion'];
+      $foto = $_FILES['foto']['name'];
+
+      if($_FILES['foto']['error']==0){ //SI NO HAY ERRORES
+        $this->admin_model->guardarEvento($titulo,$fecha,$hora,$foto,$descripcion);
+        redirect('admin/eventos');
+      }
+
+    }
+
+
     $this->load->view('admin/plantilla/encabezado_adm');
     $this->load->view('admin/eventos_adm_view');
     $this->load->view('admin/plantilla/pie_adm');
