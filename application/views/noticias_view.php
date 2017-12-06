@@ -3,21 +3,21 @@
     <ol class="breadcrumb">
       <li><a href="#">Noticias</a></li>
     </ol>
-    
+
     <?php
     $CI= &get_instance();
     $CI->load->model('web_model');
     $files = $CI->web_model->mostrarNoticias(); ?>
       <?php foreach($files as $file){ ?>
         <article class='post clearfix'>
-            <a href="#" class="thumb pull-left">
+            <a href="<?= site_url('web/verNoticias') ?>" class="thumb pull-left">
                 <img class="img-thumbnail" src="<?php echo base_url() ."images/noticia1.jpg"; ?>" alt="">
             </a>
-            <h2 class="post-title"><a href="#"><?= $file->titulo ?></a></h2>
+            <h2 class="post-title"><a href="<?= site_url('web/verNoticias') ?>"><?= $file->titulo ?></a></h2>
             <p class="post-contenido text-justify"><?= $file->resumen ?></p>
             <div class="contenedor-botones">
-              <a href="#" class="btn btn-primary">Leer Mas</a>
-              <a href="#" class="btn btn-success">Comentarios<span class="badge">5</span></a>
+              <a href="<?= site_url('web/verNoticias') ?>" class="btn btn-primary">Leer Mas</a>
+              <a href="<?= site_url('web/verNoticias') ?>" class="btn btn-success">Comentarios<span class="badge">5</span></a>
             </div>
       </article>
     <?php } ?>

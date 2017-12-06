@@ -61,4 +61,10 @@ class Web extends CI_Controller{
 		$this->load->view('plantilla/pie');
 	}
 
+	public function verNoticias(){
+		$this->load->view('plantilla/encabezado');
+		$this->load->view('verNoticia_View');
+		$this->load->view('plantilla/pie');
+	}
+
 }
