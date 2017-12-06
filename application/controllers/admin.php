@@ -16,18 +16,23 @@ class Admin extends CI_Controller{
     $this->load->view('admin/plantilla/pie_adm');
   }
 
-  public function noticias(){
-
+  public function noticias($id=0){
     if(isset($_POST['titulo'])){
-
+      $id = $_POST['id'];
       $titulo = $_POST['titulo'];
       $resumen = $_POST['resumen'];
       $texto = $_POST['texto'];
       $foto = $_FILES['foto']['name'];
+      if($id==0){//SI SE ESTÁ CREANDO
 
-      if($_FILES['foto']['error']==0){ //SI NO HAY ERRORES
-        $this->admin_model->guardarNoticia($titulo,$resumen,$foto,$texto);
-        redirect('admin/noticias');
+        if($_FILES['foto']['error']==0){ //SI NO HAY ERRORES
+          $this->admin_model->guardarNoticia($id,$titulo,$resumen,$foto,$texto);
+          redirect('admin/noticias');
+        }
+
+      }else if($id>0){ //SE ESTÁ EDITANDO
+          $this->admin_model->editarNoticia($id,$titulo,$resumen,$foto,$texto);
+          redirect('admin/noticias');
       }
 
     }
