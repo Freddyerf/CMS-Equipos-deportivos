@@ -1,65 +1,29 @@
-<div class="container">
-  <div class="col">
-    <div class="row">
-      <div class="col-xs-10">
-        <table class="table table-responsive">
-          <thead>
-            <tr></tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <div class="jumbotron">
-                  <h1>Artículo 1</h1>
-                  <p>Aquí irá la descripción del Artículo 1 Aquí irá la descripción del
-                    Artículo 1 Aquí irá la descripción del Artículo 1 Aquí irá la
-                    descripción del Artículo 1 Aquí irá la descripción del Artículo 1.</p>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="jumbotron">
-                  <h1>Artículo 2</h1>
-                  <p>Aquí irá la descripción del Artículo 1 Aquí irá la descripción del
-                      Artículo 1 Aquí irá la descripción del Artículo 1 Aquí irá la
-                      descripción del Artículo 1 Aquí irá la descripción del Artículo 1.</p>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="jumbotron">
-                  <h1>Artículo 3</h1>
-                  <p>Aquí irá la descripción del Artículo 1 Aquí irá la descripción del
-                        Artículo 1 Aquí irá la descripción del Artículo 1 Aquí irá la
-                        descripción del Artículo 1 Aquí irá la descripción del Artículo 1.</p>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="jumbotron">
-                  <h1>Artículo 4</h1>
-                  <p>Aquí irá la descripción del Artículo 1 Aquí irá la descripción del
-                          Artículo 1 Aquí irá la descripción del Artículo 1 Aquí irá la
-                          descripción del Artículo 1 Aquí irá la descripción del Artículo 1.</p>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="jumbotron">
-                  <h1>Artículo 5</h1>
-                  <p>Aquí irá la descripción del Artículo 1 Aquí irá la descripción del
-                            Artículo 1 Aquí irá la descripción del Artículo 1 Aquí irá la
-                            descripción del Artículo 1 Aquí irá la descripción del Artículo 1.</p>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+  <section class="posts col-md-9">
+    <div class="miga-de-pan">
+      <ol class="breadcrumb">
+        <li><a href="#">Inicio</a></li>
+      </ol>
+
+      <?php
+      $CI= &get_instance();
+      $CI->load->model('web_model');
+      $files = $CI->web_model->mostrarNoticias();
+      $count = 5;?>
+        <?php foreach($files as $file){ if($count!=0){?>
+          <article class='post clearfix'>
+              <a href="<?= site_url('web/verNoticias') ?>" class="thumb pull-left">
+                  <img class="img-thumbnail" src="<?php echo base_url() ."images/noticia1.jpg"; ?>" alt="">
+              </a>
+              <h2 class="post-title"><a href="<?= site_url('web/verNoticias') ?>"><?= $file->titulo ?></a></h2>
+              <p class="post-contenido text-justify"><?= $file->resumen ?></p>
+              <div class="contenedor-botones">
+                <a href="<?= site_url('web/verNoticias') ?>" class="btn btn-primary">Leer Mas</a>
+                <a href="<?= site_url('web/verNoticias') ?>" class="btn btn-success">Comentarios<span class="badge">5</span></a>
+              </div>
+        </article>
+      <?php $count = $count -1; } } ?>
+    </div>
+  </section>
 
       <div class="col-xs-2 col-xs-offset-0">
         <div class="row">

@@ -13,7 +13,7 @@ class Admin extends CI_Controller{
   function index()
   {
     $this->load->view('admin/plantilla/encabezado_adm');
-    echo "este es el inicio del admin";
+    $this->load->view('admin/noticias_adm_view');
     $this->load->view('admin/plantilla/pie_adm');
   }
 
