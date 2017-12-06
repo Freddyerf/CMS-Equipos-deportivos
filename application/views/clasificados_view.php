@@ -1,7 +1,7 @@
 <section class="posts col-md-9">
   <div class="miga-de-pan">
     <ol class="breadcrumb">
-      <li><a href="#">Noticias</a></li>
+      <li><a href="#">Clasificados</a></li>
     </ol>
     <article class="post clearfix">
       <a href="#" class="thumb pull-left">
