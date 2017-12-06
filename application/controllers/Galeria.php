@@ -12,12 +12,17 @@ class Galeria extends CI_Controller {
 		
 	public function index()
 	{
-		$config['base_url'] = base_url('index.php/Galeria/index');
+		$segmento=$this->uri->segment_array();
+		$idPaginacion;
+		$idPaginacion=($segmento[count($segmento)]+0!=0)? $segmento[count($segmento)]:0;
+
+		$config['base_url'] = base_url('Galeria/index');
 		//$config['base_url'] = 'http://example.com/index.php/test/page/';	
 		$config['total_rows'] = 200;
 		$config['per_page'] = 10;
 		
-		$cantidad=$this->uri->segment_array()[count($this->uri->segment_array())];
+		$datos['galerias']=$this->galeria_model->buscarGalerias($idPaginacion);
+		
 		$this->pagination->initialize($config);
 		
 		$datos['creados']=$this->pagination->create_links();
@@ -72,7 +77,11 @@ class Galeria extends CI_Controller {
 					$data = array('upload_data' => $this->upload->data());
 			}
 		}
-		
+		echo"
+		<script>
+			window.location='".base_url()."Galeria';
+		</script>
+		";
 		redirect('galeria');
 		$this->galeria_model->crearGaleria($galeria);
 	}
