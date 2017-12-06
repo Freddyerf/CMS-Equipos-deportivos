@@ -10,7 +10,12 @@ hr {
  }
 </style>
 <?php
-
+$latituddelmapa = 18.3737;
+$longituddelmapa = -69.4342;
+  if(isset($_GET['lat']) && isset($_GET['lon'])){
+    $latituddelmapa = $_GET['lat'];
+    $longituddelmapa = $_GET['lon'];
+  }
  ?>
 <div class="container">
   <h2><center>Miembros</center></h2><hr/>
@@ -22,6 +27,8 @@ hr {
         <th>Nombre</th>
         <th>Telefono</th>
         <th>Correo</th>
+        <th>Latitud</th>
+        <th>Longitud</th>
         <th>Act</th>
       </tr>
     </thead>
@@ -35,13 +42,12 @@ hr {
             }
         ?>
         <td>
-          <a href="#" class='btn btn-primary'>Exportar</a>
+          <a href="<?php echo site_url('admin/miembros').'?lat='.$file->latitud.'&lon'.$file->longitud ?>" class='btn btn-primary'>Mapa</a>
         </td>
         </tr>
 
       <?php } ?>
     </tbody>
-
   </table>
 </div>
 <div class="container">
@@ -50,8 +56,7 @@ hr {
   <script>
       function initMap() {
       var i = 0;
-
-      var uluru = {lat: <?=$this->admin_model->getlatMiembros()[0]['latitud']?>, lng: <?=$this->admin_model->getlonMiembros()[0]['longitud']?>};
+      var uluru = {lat: <?=$latituddelmapa?>, lng: <?=$longituddelmapa?>};
       var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 8,
         center: uluru

@@ -115,7 +115,7 @@ class Admin_model extends CI_Model{
   *
   */
   public function mostrarMiembros(){
-    $this->db->select('id_usuario,nombre,telefono,correo');
+    $this->db->select('id_usuario,nombre,telefono,correo,latitud,longitud');
     $query = $this->db->get('usuarios')->result();
 
     return $query;
@@ -149,6 +149,13 @@ class Admin_model extends CI_Model{
 
   public function getlonMiembros(){
     $sql = "SELECT longitud from usuarios";
+    $query = $this->db->query($sql)->result_array();
+
+    return $query;
+  }
+
+  public function getcoordMiembros(){
+    $sql = "SELECT latitud,longitud from usuarios";
     $query = $this->db->query($sql)->result_array();
 
     return $query;
