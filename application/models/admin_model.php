@@ -140,5 +140,19 @@ class Admin_model extends CI_Model{
 
   }
 
+  public function getlatMiembros(){
+    $sql = "SELECT latitud from usuarios";
+    $query = $this->db->query($sql)->result_array();
+
+    return $query;
+  }
+
+  public function getlonMiembros(){
+    $sql = "SELECT longitud from usuarios";
+    $query = $this->db->query($sql)->result_array();
+
+    return $query;
+  }
+
 
 }
