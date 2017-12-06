@@ -18,7 +18,7 @@
         <input type="file" name="foto" class="form-control"/>
       </div>
 			<div>
-				<center><button type="submit" class="btn btn-primary">Actualizar cambios</button></center>
+				<center><button type="submit" class="btn btn-primary" name="actualizar">Actualizar cambios</button></center>
 			</div>
 		</div>
 	</form>

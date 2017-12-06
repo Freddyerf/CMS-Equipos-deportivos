@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>CMS</title>
+		<title><?= $this->config->item('titulo') ?></title>
 
 		<style>
 			.centro{
@@ -45,7 +45,7 @@
 							 		<span class="icon-bar"></span>
 							 		<span class="icon-bar"></span>
 								</button>
-    		        <a class="navbar-brand" href="<?= site_url('admin') ?>">Equipos deportivos</a>
+    		        <a class="navbar-brand" href="<?= site_url('admin') ?>"><?= $this->config->item('equipo') ?></a>
     		    </div>
 					<div class="collapse navbar-collapse" id="mainNavBar">
     		    <ul class="nav navbar-nav">

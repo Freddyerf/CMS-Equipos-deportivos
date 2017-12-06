@@ -3,7 +3,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width= device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0">
-		<title>CMS</title>
+		<title><?= $this->config->item('titulo') ?></title>
+		<link rel="shortcut icon" href="<?php echo base_url() ."images/logo.ico" ?>">
 		<style>
 			.centro{
 				min-height: 300px;
@@ -29,7 +30,7 @@
 			}
 			.post .contenedor-botones{
 				width: 100%;
-				
+
 			}
 		</style>
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -52,7 +53,7 @@
 							 		<span class="icon-bar"></span>
 							 		<span class="icon-bar"></span>
 								</button>
-    		        <a class="navbar-brand" href="<?= site_url('web') ?>">Equipos deportivos</a>
+    		        <a class="navbar-brand" href="<?= site_url('web') ?>"><?= $this->config->item('equipo') ?></a>
     		    </div>
 					<div class="collapse navbar-collapse" id="mainNavBar">
     		    <ul class="nav navbar-nav">
