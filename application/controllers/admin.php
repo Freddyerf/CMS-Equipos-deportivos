@@ -16,18 +16,24 @@ class Admin extends CI_Controller{
     $this->load->view('admin/plantilla/pie_adm');
   }
 
-  public function noticias(){
-
+  public function noticias($id=0){
     if(isset($_POST['titulo'])){
-
+      $id = $_POST['id'];
       $titulo = $_POST['titulo'];
       $resumen = $_POST['resumen'];
       $texto = $_POST['texto'];
       $foto = $_FILES['foto']['name'];
 
-      if($_FILES['foto']['error']==0){ //SI NO HAY ERRORES
-        $this->admin_model->guardarNoticia($titulo,$resumen,$foto,$texto);
-        redirect('admin/noticias');
+      if($id==0){ //SE SE ESTÁ CREANDO
+
+        if($_FILES['foto']['error']==0){ //SI NO HAY ERRORES
+          $this->admin_model->guardarNoticia($titulo,$resumen,$foto,$texto);
+          redirect('admin/noticias');
+        }
+
+      }else if($id>0){ //SE ESTÁ EDITANDO
+          $this->admin_model->editarNoticia($id,$titulo,$resumen,$foto,$texto);
+          redirect('admin/noticias');
       }
 
     }
@@ -38,21 +44,24 @@ class Admin extends CI_Controller{
     $this->load->view('admin/plantilla/pie_adm');
   }
 
-  public function eventos(){
-
+  public function eventos($id=0){
     if(isset($_POST['titulo'])){
-
+      $id = $_POST['id'];
       $titulo = $_POST['titulo'];
       $fecha = $_POST['fecha'];
       $hora = $_POST['hora'];
       $descripcion = $_POST['descripcion'];
       $foto = $_FILES['foto']['name'];
 
-      if($_FILES['foto']['error']==0){ //SI NO HAY ERRORES
-        $this->admin_model->guardarEvento($titulo,$fecha,$hora,$foto,$descripcion);
+      if($id==0){ //SE SE ESTÁ CREANDO
+        if($_FILES['foto']['error']==0){ //SI NO HAY ERRORES
+          $this->admin_model->guardarEvento($titulo,$fecha,$hora,$foto,$descripcion);
+          redirect('admin/eventos');
+        }
+      }else if($id>0){ //SE ESTÁ EDITANDO
+        $this->admin_model->editarEvento($id,$titulo,$fecha,$hora,$foto,$descripcion);
         redirect('admin/eventos');
       }
-
     }
 
 

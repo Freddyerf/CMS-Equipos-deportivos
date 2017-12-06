@@ -7,7 +7,7 @@
                   <div class="mbr-header mbr-header--center mbr-header--std-padding">
                       <h2 class="mbr-header__text"><center>CONTACTO</center></h2>
                   </div>
-                  <form action="#" method="post">
+                  <form method="post">
                       <div class="form-group">
                           <input type="text" class="form-control" name="name" required="" placeholder="Nombre*" >
                       </div>
