@@ -121,6 +121,24 @@ class Admin_model extends CI_Model{
     return $query;
   }
 
+  public function mostrarUsuarios(){
+    $this->db->select('id_usuario,nombre,telefono,correo,admin');
+    $query = $this->db->get('usuarios')->result();
+
+    return $query;
+  }
+
+  public function ponerPriv($id){
+    $sql = "UPDATE usuarios SET admin = 1 WHERE id_usuario = ?";
+    $this->db->query($sql, $id);
+
+  }
+
+  public function quitarPriv($id){
+    $sql = "UPDATE usuarios SET admin = 0 WHERE id_usuario = ?";
+    $this->db->query($sql, $id);
+
+  }
 
 
 }

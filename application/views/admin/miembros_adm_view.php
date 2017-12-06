@@ -30,7 +30,7 @@ hr {
             }
         ?>
         <td>
-          <a href="<?php echo site_url('admin/miembros').'?del='.$file->id_usuario?>" class='btn btn-primary'>Exportar</a>
+          <a href="#" class='btn btn-primary'>Exportar</a>
         </td>
         </tr>
       <?php } ?>
