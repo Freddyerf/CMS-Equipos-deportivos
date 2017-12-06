@@ -109,4 +109,18 @@ class Admin_model extends CI_Model{
   }
 
 
+  /*
+  *
+  * MÉTODOS DE MIEMBROS
+  *
+  */
+  public function mostrarMiembros(){
+    $this->db->select('id_usuario,nombre,telefono,correo');
+    $query = $this->db->get('usuarios')->result();
+
+    return $query;
+  }
+
+
+
 }
