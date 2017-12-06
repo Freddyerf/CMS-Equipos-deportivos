@@ -9,6 +9,11 @@ class Admin_model extends CI_Model{
 
   }
 
+/*
+*
+* MÉTODOS DE NOTICIAS
+*
+*/
   public function guardarNoticia($titulo,$resumen,$foto,$cuerpo){
     $sql = "INSERT INTO noticias(titulo,resumen,foto,cuerpo) values(?, ?, ?, ?)";
 		$this->db->query($sql, array($titulo,$resumen,$foto,$cuerpo));
@@ -43,13 +48,29 @@ class Admin_model extends CI_Model{
     $sql = "DELETE FROM noticias WHERE id_noticia = ?";
 		$this->db->query($sql, $id);
   }
+  /*
+  *
+  * FIN MÉTODOS DE NOTICIAS
+  *
+  */
 
+
+
+  /*
+  *
+  * MÉTODOS DE EVENTOS
+  *
+  */
   public function guardarEvento($titulo,$fecha,$hora,$foto,$cuerpo){
     $sql = "INSERT INTO eventos(titulo,fecha,hora,foto,cuerpo) values(?, ?, ?, ?, ?)";
     $this->db->query($sql, array($titulo,$fecha,$hora,$foto,$cuerpo));
 
   }
-
+  /*
+  *
+  * FIN MÉTODOS DE EVENTOS
+  *
+  */
 
 
 }
