@@ -66,6 +66,35 @@ class Admin_model extends CI_Model{
     $this->db->query($sql, array($titulo,$fecha,$hora,$foto,$cuerpo));
 
   }
+
+  public function mostrarEventos(){
+    $this->db->select('id_evento,titulo,fecha,hora,foto');
+    $query = $this->db->get('eventos')->result();
+
+    return $query;
+  }
+
+  public function getEvento($id){
+    $query = $this->db->get('eventos')->result_array();
+
+    return $query;
+  }
+
+  public function editarEvento($id,$titulo,$fecha,$hora,$foto,$cuerpo){
+    if($foto==''){ //si no añadió una foto
+      $sql = "UPDATE eventos SET titulo = ?, fecha = ?, hora = ?, cuerpo = ? WHERE id_evento = ?";
+      $array = array($titulo,$fecha,$hora,$cuerpo,$id);
+    }else{
+      $sql = "UPDATE eventos SET titulo = ?, fecha = ?, hora = ?, foto = ?, cuerpo = ? WHERE id_evento = ?";
+      $array = array($titulo,$fecha,$hora,$foto,$cuerpo,$id);
+    }
+      $this->db->query($sql, $array);
+  }
+
+  public function eliminarEvento($id){
+    $sql = "DELETE FROM eventos WHERE id_evento = ?";
+    $this->db->query($sql, $id);
+  }
   /*
   *
   * FIN MÉTODOS DE EVENTOS
