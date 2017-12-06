@@ -2,11 +2,34 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width= device-width", user-scalable=no, initial-scale=1.0, minimum-scale=1.0">
+		<meta name="viewport" content="width= device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0">
 		<title>CMS</title>
 		<style>
 			.centro{
 				min-height: 300px;
+			}
+			.main{
+				margin-top: 20px;
+				margin-bottom: 20px;
+			}
+			.post{
+				padding-bottom: 20px;
+				margin-bottom: 20px;
+				border-bottom: 1px solid #999;
+			}
+			.post .post-title a{
+				color: #333;
+			}
+			.post .thumb{
+				margin-right: 10px;
+				width: 40%;
+			}
+			.post .thumb img{
+				width: 100%;
+			}
+			.post .contenedor-botones{
+				width: 100%;
+				
 			}
 		</style>
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
