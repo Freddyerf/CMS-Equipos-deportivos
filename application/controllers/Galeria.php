@@ -22,8 +22,6 @@ class Galeria extends CI_Controller {
 		$settings['total_rows'] = $total;
 		$settings['per_page'] = 1;
 
-
-
 		$datos['galerias']=$this->galeria_model->buscarGalerias($settings['per_page'], $start_index);
 
 		$this->pagination->initialize($settings);
@@ -41,7 +39,18 @@ class Galeria extends CI_Controller {
 		$this->load->view('addGaleria_view');
 		$this->load->view('plantilla/pie');
 	}
-
+	public function procesoActualizarGaleria(){
+		if(!$_POST){
+			redirect('galeria');
+		}
+		$galeria['id']=$this->input->post('txid');
+		$galeria['nombre']=$this->input->post('txtitulo');
+		$galeria['descripcion']=$this->input->post('txdescripcion');
+		
+		$this->galeria_model->actualizarGaleria($galeria);
+		
+		redirect('galeria');
+	}
 	public function procesoCrearGaleria(){
 		if(!$_POST){
 			redirect('galeria/crearGaleria');

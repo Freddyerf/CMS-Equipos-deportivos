@@ -7,7 +7,11 @@ class galeria_model extends CI_Model{
 		parent::__construct();
 	}
 
-
+	public function actualizarGaleria($datos){
+		$this->db->where('id',$datos['id']);
+		$this->db->update('galerias',$datos);
+	}
+	
 	public function crearGaleria($datos){
 		$this->db->insert('galerias',$datos);
 	}

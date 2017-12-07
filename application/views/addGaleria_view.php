@@ -1,6 +1,11 @@
+<?php var_dump($galeria)?>
 <h1>Crear Galeria</h1>
-<form method="post" action='procesoCrearGaleria' enctype='multipart/form-data'>
+<form method="post" enctype='multipart/form-data'  
+action='<?=(isset($galeria->id))?'procesoActualizarGaleria':'procesoCrearGaleria'?>'>
 	<div>
+		<?php echo (isset($galeria->id))? 
+		"<input type='hidden' name='txid' value='{$galeria->id}'>"
+		: '';?>
 		<div class="row">
 			<div class='col col-md-6'>
 				<div class='input-group form-gruop'>
