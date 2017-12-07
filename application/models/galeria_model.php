@@ -16,7 +16,8 @@ class galeria_model extends CI_Model{
 	}
 	
 	public function buscarGalerias($id){
-		$this->ci->db->limit($id,10);
-		$this->ci->db->get('galeria')->result();
+		$this->ci->db->limit(10,$id);
+		$result=$this->ci->db->get('galeria')->result();
+		return $result;
 	}
 }

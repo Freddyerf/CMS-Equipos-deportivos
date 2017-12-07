@@ -57,7 +57,7 @@
 					<div class="collapse navbar-collapse" id="mainNavBar">
     		    <ul class="nav navbar-nav">
         		  <li><a href="<?= site_url('web/noticias') ?>">Noticias</a></li>
-        		  <li><a href="<?= site_url('web/galeria') ?>">Galería</a></li>
+        		  <li><a href="<?= site_url('galeria') ?>">Galería</a></li>
 							<li><a href="<?= site_url('web/eventos') ?>">Eventos</a></li>
 							<li class="dropdown">
 							    <a href="#" data-toggle="dropdown" class="dropdown-toggle">Clasificados<b class="caret"></b></a>
