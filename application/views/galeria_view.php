@@ -1,3 +1,5 @@
+
+
 <?php $i=0;
 	//var_dump($galeria);
 	$direccion='images/galeria/'.$galeria->nombreCarpeta."/";
