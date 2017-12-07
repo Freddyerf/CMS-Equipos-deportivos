@@ -77,7 +77,7 @@ class Web extends CI_Controller{
 
 	public function crearClasificados(){
 		if(!$this->session->userdata('cedula')){ //SI NO ESTÁ LOGUEADO
-			redirect('web/clasificados');
+			redirect('login');
 		}else{
 
 			if($_POST){
