@@ -51,7 +51,7 @@
     		    <ul class="nav navbar-nav">
         		  <li><a href="<?= site_url('admin/noticias') ?>">Noticias</a></li>
         		  <li><a href="<?= site_url('admin/miembros') ?>">Miembros</a></li>
-							<li><a href="<?= site_url('admin/galeria') ?>">Galería</a></li>
+							<li><a href="<?= site_url('galeria') ?>">Galería</a></li>
 							<li><a href="<?= site_url('admin/eventos') ?>">Eventos</a></li>
 							<li><a href="<?= site_url('admin/clasificados') ?>">Clasificados</a></li>
 							<li><a href="<?= site_url('admin/contacto') ?>">Contacto</a></li>

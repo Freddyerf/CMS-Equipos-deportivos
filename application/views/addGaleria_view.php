@@ -5,7 +5,8 @@
 			<div class='col col-md-6'>
 				<div class='input-group form-gruop'>
 					<label class='input-group-addon'>Titulo</label>
-					<input type='text' name='txtitulo' class='form-control'/>
+					<input type='text' name='txtitulo' class='form-control' 
+					value='<?php echo (isset($galeria->nombre))? $galeria->nombre : ''?>'/>
 				</div>
 			</div>
 		</div>
@@ -13,7 +14,8 @@
 			<div class='col col-md-6'>
 				<div class='input-group form-gruop'>
 					<label class='input-group-addon'>Descripcion</label>
-					<textarea name='txdescripcion' class='form-control'></textarea>
+					<textarea name='txdescripcion' class='form-control'
+					><?php echo (isset($galeria->descripcion))? $galeria->descripcion : ''?></textarea>
 				</div>
 			</div>
 		</div>
