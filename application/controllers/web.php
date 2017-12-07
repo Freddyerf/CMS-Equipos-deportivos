@@ -6,6 +6,7 @@ class Web extends CI_Controller{
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('web_model');
+		$this->load->library('pagination');
 	}
 
 	function index(){
@@ -17,8 +18,27 @@ class Web extends CI_Controller{
 	}
 
 	public function noticias(){
+
+		$start_index = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+		$total = $this->web_model->numeroNoticias();
+
+		$this->config->load('pagination', TRUE);
+		$settings = $this->config->item('pagination');
+
+		$settings['base_url'] = base_url('web/noticias');
+		$settings['total_rows'] = $total;
+		$settings['per_page'] = 5;
+
+
+		$datos['noticias']=$this->web_model->buscarNoticias($settings['per_page'], $start_index);
+
+		$this->pagination->initialize($settings);
+
+		$datos['links']=$this->pagination->create_links();
+
+
 		$this->load->view('plantilla/encabezado');
-		$this->load->view('noticias_view');
+		$this->load->view('noticias_view',$datos);
 		$this->load->view('plantilla/pie');
 	}
 

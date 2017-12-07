@@ -19,7 +19,7 @@ class Galeria extends CI_Controller {
 		$settings = $this->config->item('pagination');
 
 		$settings['base_url'] = base_url('Galeria/index');
-		$settings['total_rows'] = 5;
+		$settings['total_rows'] = $total;
 		$settings['per_page'] = 1;
 
 

@@ -16,6 +16,18 @@ class Web_model extends CI_Model{
     return $query;
   }
 
+  public function buscarNoticias($porpag,$index){
+    $this->db->limit($porpag,$index);
+    $result=$this->db->get('noticias')->result();
+    return $result;
+  }
+
+  public function numeroNoticias(){
+    $this->db->select('count(*) as resultado');
+    return $this->db->get('noticias')->result()[0]->resultado;
+  }
+
+
   public function getNoticia($id){
     $sql = "SELECT * FROM noticias WHERE id_noticia = ?";
     $query = $this->db->query($sql, $id)->result_array();
