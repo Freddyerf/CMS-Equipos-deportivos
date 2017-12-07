@@ -82,7 +82,6 @@ class Galeria extends CI_Controller {
 			window.location='".base_url()."Galeria';
 		</script>
 		";
-		redirect('galeria');
 		$this->galeria_model->crearGaleria($galeria);
 	}
 }

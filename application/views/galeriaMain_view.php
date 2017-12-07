@@ -3,9 +3,8 @@
 <div style='clear:left'></div>
 <?php
 	if($galerias!=null)
-	foreach($galerias as $articulo){
-?>
-	<?=$articulo->id?>
+	foreach($galerias as $articulo){?>
+	<div class='galeria'></div>
 
 <?php } ?>
 <?=$creados?>

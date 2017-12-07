@@ -1,5 +1,5 @@
 <?php
 define('TITULO','Titulo de video');
-define('EQUIPO','Licey');
+define('EQUIPO','Escogido Campeon');
 define('LOGO','');
 			
