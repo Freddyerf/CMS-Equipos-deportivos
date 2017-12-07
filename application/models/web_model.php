@@ -49,4 +49,11 @@ class Web_model extends CI_Model{
     return $query;
   }
 
+  public function getClasificado($id){
+    $sql = "SELECT * FROM clasificados WHERE id_clasificado = ?";
+    $query = $this->db->query($sql, $id)->result_array();
+
+    return $query;
+  }
+
 }
