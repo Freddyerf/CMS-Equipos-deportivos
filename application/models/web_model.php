@@ -55,8 +55,8 @@ class Web_model extends CI_Model{
   }
 
   public function mostrarClasificados(){
-    $this->db->select('id_clasificado,titulo,descripcion,fecha,usuario,contacto');
-    $query = $this->db->get('clasificados')->result();
+    $sql = "SELECT id_clasificado,titulo,descripcion,fecha,usuario,contacto FROM clasificados WHERE estado = 1";
+    $query = $this->db->query($sql)->result();
 
     return $query;
   }

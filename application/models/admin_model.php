@@ -210,4 +210,18 @@ class Admin_model extends CI_Model{
     $this->db->query($sql, $id);
   }
 
+  public function getEstadoClasificado($id){
+    $sql = "SELECT estado FROM clasificados WHERE id_clasificado = ?";
+    $query = $this->db->query($sql,$id)->result_array()[0]['estado'];
+
+    return $query;
+  }
+
+  public function mostrarTodosClasificados(){
+    $this->db->select('id_clasificado,titulo,descripcion');
+    $query = $this->db->get('clasificados')->result();
+
+    return $query;
+  }
+
 }

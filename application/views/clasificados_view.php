@@ -21,9 +21,6 @@
             <h4 class="post-contenido text-justify"><strong>Contacto: </strong><?= $file->contacto ?></h4>
             <div class="contenedor-botones">
               <a href="<?= site_url('web/verClasificados').'?id='.$file->id_clasificado ?>" class="btn btn-primary">Leer Mas</a>
-              <?php if ($this->session->userdata('admin')){ ?>
-                <a href="<?= site_url('admin/desactivarClasificados',$file->id_clasificado)  ?>" class="btn btn-warning">Desactivar<span class="badge">5</span></a>
-              <?php } ?>
             </div>
       </article>
     <?php } ?>
