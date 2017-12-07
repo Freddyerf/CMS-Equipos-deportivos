@@ -26,4 +26,14 @@ class galeria_model extends CI_Model{
 		$result=$this->ci->db->get('galeria')->result();
 		return $result[0];
 	}
+	
+	public function eliminarGaleria($id){
+		$this->ci->db->where('id',$id);
+		$this->ci->db->delete('galeria');
+	}
+	
+	public function numeroRegistros(){
+		$this->ci->db->select('count(id) as resultado');
+		return $this->ci->db->get('galeria')->result()[0]->resultado;
+	}
 }

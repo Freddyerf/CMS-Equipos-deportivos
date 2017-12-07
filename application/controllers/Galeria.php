@@ -18,7 +18,7 @@ class Galeria extends CI_Controller {
 
 		$config['base_url'] = base_url('Galeria/index');
 		//$config['base_url'] = 'http://example.com/index.php/test/page/';	
-		$config['total_rows'] = 200;
+		$config['total_rows'] = $this->galeria_model->numeroRegistros();
 		$config['per_page'] = 10;
 		$config['full_tag_open'] = '
 		<nav>
@@ -67,6 +67,10 @@ class Galeria extends CI_Controller {
 	}
 	
 	public function procesoCrearGaleria(){
+		if(!$_POST){
+			redirect('galeria/crearGaleria');
+		}
+		
 		$carpeta=time();
 		
 		$galeria['nombre']=$this->input->post('txtitulo');
@@ -79,7 +83,7 @@ class Galeria extends CI_Controller {
 		
 		$config['upload_path']          = 'images/galeria/'.$carpeta;
 		$config['allowed_types']        = 'gif|jpg|png';
-		$config['max_size']             = 200;
+		$config['max_size']             = 1000;
 		$config['max_width']            = 2000;
 		$config['max_height']           = 2000;
 
@@ -102,28 +106,47 @@ class Galeria extends CI_Controller {
 			else
 			{
 					$data = array('upload_data' => $this->upload->data());
+					
 			}
 		}
+		if(!isset($error))$this->galeria_model->crearGaleria($galeria);
+		//var_dump($error);
 		echo"
 		<script>
 			window.location='".base_url()."Galeria';
 		</script>
 		";
-		$this->galeria_model->crearGaleria($galeria);
+		
 	}
 	
 	public function galeria(){
 		if(!$_GET){
 			redirect('galeria');
 		}
-		$galeria=$this->galeria_model->buscarGaleria($_GET['id']);
-		if($galeria==null){
+		if(isset($_GET['id'])){
+			$galeria=$this->galeria_model->buscarGaleria($_GET['id']);
+			if($galeria==null){
+				redirect('galeria');
+			}
+			$datos['galeria']=$galeria;
+			
+			$this->load->view('plantilla/encabezado');
+			$this->load->view('galeria_view',$datos);
+			$this->load->view('plantilla/pie');
+		}else if(isset($_GET['editar'])){
+			$galeria=$this->galeria_model->buscarGaleria($_GET['editar']);
+			if($galeria==null){
+				redirect('galeria');
+			}
+			$datos['galeria']=$galeria;
+			
+			$this->load->view('plantilla/encabezado');
+			$this->load->view('addGaleria_view',$datos);
+			$this->load->view('plantilla/pie');
+		}
+		else if(isset($_GET['eliminar'])){
+			$galeria=$this->galeria_model->eliminarGaleria($_GET['eliminar']);
 			redirect('galeria');
 		}
-		$datos['galeria']=$galeria;
-		
-		$this->load->view('plantilla/encabezado');
-		$this->load->view('galeria_view',$datos);
-		$this->load->view('plantilla/pie');
 	}
 }

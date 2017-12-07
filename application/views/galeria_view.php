@@ -8,6 +8,8 @@
 ?>
 
 <div class="container">
+	<h2><?=$galeria->nombre?></h2>
+	<h5><?=$galeria->descripcion?></h5>
 	<div class="row">
 <?php foreach($fotos as $foto){
 	$imagen=$direccion.$foto;
@@ -28,4 +30,5 @@
 	}  
 ?>
 	</div>
+	<a style='position:fixed;bottom:10px' href='<?=base_url("galeria")?>' class='btn btn-primary'>Ir atras</a>
 </div>
