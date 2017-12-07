@@ -28,4 +28,11 @@ class Web_model extends CI_Model{
     $this->db->query($sql, array($nombre,$correo,$mensaje));
   }
 
+  public function mostrarFAQ(){
+    $this->db->select('id_faq,pregunta,respuesta');
+    $query = $this->db->get('faq')->result();
+
+    return $query;
+  }
+
 }

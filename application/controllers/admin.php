@@ -131,16 +131,16 @@ class Admin extends CI_Controller{
       $respuesta = $_POST['respuesta'];
 
       if($id==0){ //SE SE ESTÁ CREANDO
-        $this->admin_model->guardarEvento($titulo,$fecha,$hora,$foto,$descripcion);
-        redirect('admin/eventos');
+        $this->admin_model->guardarFAQ($pregunta,$respuesta);
+        redirect('admin/faq');
       }
 
       else if($id>0){ //SE ESTÁ EDITANDO
-        $this->admin_model->editarEvento($id,$titulo,$fecha,$hora,$foto,$descripcion);
-        redirect('admin/eventos');
+        $this->admin_model->editarFAQ($id,$pregunta,$respuesta);
+        redirect('admin/faq');
       }
     } else if (isset($_POST['nuevo'])){
-        redirect('admin/eventos');
+        redirect('admin/faq');
       }
 
 

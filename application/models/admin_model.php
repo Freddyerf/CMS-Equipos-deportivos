@@ -182,6 +182,18 @@ class Admin_model extends CI_Model{
     return $query;
   }
 
+  public function guardarFAQ($pregunta,$respuesta){
+    $sql = "INSERT INTO faq(pregunta, respuesta) values(?, ?)";
+    $this->db->query($sql, array($pregunta,$respuesta));
+
+  }
+
+  public function editarFAQ($id,$pregunta,$respuesta){
+      $sql = "UPDATE faq SET pregunta = ?, respuesta = ? WHERE id_faq = ?";
+      $array = array($pregunta,$respuesta,$id);
+      $this->db->query($sql, $array);
+  }
+
   public function eliminarFAQ($id){
     $sql = "DELETE FROM faq WHERE id_faq = ?";
     $this->db->query($sql, $id);
