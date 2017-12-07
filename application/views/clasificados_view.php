@@ -1,7 +1,10 @@
-<section class="posts col-md-9">
+<section class="center-block">
   <div class="miga-de-pan">
     <ol class="breadcrumb">
       <li><a href="<?= site_url('web/clasificados') ?>">Clasificados</a></li>
+      <?php if ($this->session->userdata('cedula')){ ?>
+        <li><a href="<?= site_url('web/crearClasificados') ?>">Crear clasificado</a></li>
+      <?php } ?>
     </ol>
 
     <?php

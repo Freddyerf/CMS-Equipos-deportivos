@@ -39,7 +39,6 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
 	</head>
 	<body style="background-color: rgb(239, 239, 239); margin-top: 50px;">
@@ -60,7 +59,13 @@
         		  <li><a href="<?= site_url('web/noticias') ?>">Noticias</a></li>
         		  <li><a href="<?= site_url('galeria') ?>">Galería</a></li>
 							<li><a href="<?= site_url('web/eventos') ?>">Eventos</a></li>
-							<li><a href="<?= site_url('web/clasificados') ?>">Clasificados</a></li>
+							<li class="dropdown">
+							    <a href="#" data-toggle="dropdown" class="dropdown-toggle">Clasificados<b class="caret"></b></a>
+							    <ul class="dropdown-menu">
+							        <li><a href="<?= site_url('web/clasificados') ?>">Ver anuncios</a></li>
+							        <li><a href="<?= site_url('web/crearClasificados') ?>">Crear anuncio</a></li>
+							    </ul>
+							</li>
 							<li><a href="<?= site_url('web/contacto') ?>">Contacto</a></li>
 							<li><a href="<?= site_url('web/faq') ?>">FAQ</a></li>
 							<?php if ($this->session->userdata('admin')){ ?>
