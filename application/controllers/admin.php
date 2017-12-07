@@ -125,6 +125,25 @@ class Admin extends CI_Controller{
   }
 
   public function faq(){
+    if(isset($_POST['publicar'])){
+      $id = $_POST['id'];
+      $pregunta = $_POST['pregunta'];
+      $respuesta = $_POST['respuesta'];
+
+      if($id==0){ //SE SE ESTÁ CREANDO
+        $this->admin_model->guardarEvento($titulo,$fecha,$hora,$foto,$descripcion);
+        redirect('admin/eventos');
+      }
+
+      else if($id>0){ //SE ESTÁ EDITANDO
+        $this->admin_model->editarEvento($id,$titulo,$fecha,$hora,$foto,$descripcion);
+        redirect('admin/eventos');
+      }
+    } else if (isset($_POST['nuevo'])){
+        redirect('admin/eventos');
+      }
+
+
     $this->load->view('admin/plantilla/encabezado_adm');
     $this->load->view('admin/faq_adm_view');
     $this->load->view('admin/plantilla/pie_adm');

@@ -163,5 +163,28 @@ class Admin_model extends CI_Model{
     return $query;
   }
 
+  /*
+  *
+  * MÉTODOS DE FAQ
+  *
+  */
+  public function mostrarFAQ(){
+    $this->db->select('id_faq,pregunta,respuesta');
+    $query = $this->db->get('faq')->result();
+
+    return $query;
+  }
+
+  public function getFAQ($id){
+    $sql = "SELECT * FROM faq WHERE id_faq = ?";
+    $query = $this->db->query($sql, $id)->result_array();
+
+    return $query;
+  }
+
+  public function eliminarFAQ($id){
+    $sql = "DELETE FROM faq WHERE id_faq = ?";
+    $this->db->query($sql, $id);
+  }
 
 }
