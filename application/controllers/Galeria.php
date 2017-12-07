@@ -84,4 +84,10 @@ class Galeria extends CI_Controller {
 		";
 		$this->galeria_model->crearGaleria($galeria);
 	}
+	
+	public function buscarGaleria(){
+		if(!$_GET){
+			redirect('galeria');
+		}
+	}
 }

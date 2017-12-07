@@ -58,7 +58,7 @@
 					<div class="collapse navbar-collapse" id="mainNavBar">
     		    <ul class="nav navbar-nav">
         		  <li><a href="<?= site_url('web/noticias') ?>">Noticias</a></li>
-        		  <li><a href="<?= site_url('web/galeria') ?>">Galería</a></li>
+        		  <li><a href="<?= site_url('galeria') ?>">Galería</a></li>
 							<li><a href="<?= site_url('web/eventos') ?>">Eventos</a></li>
 							<li><a href="<?= site_url('web/clasificados') ?>">Clasificados</a></li>
 							<li><a href="<?= site_url('web/contacto') ?>">Contacto</a></li>
