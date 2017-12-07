@@ -42,4 +42,11 @@ class Web_model extends CI_Model{
     return $query;
   }
 
+  public function mostrarClasificados(){
+    $this->db->select('id_clasificado,titulo,descripcion,fecha,usuario,contacto');
+    $query = $this->db->get('clasificados')->result();
+
+    return $query;
+  }
+
 }

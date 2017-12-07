@@ -70,7 +70,13 @@ class Web extends CI_Controller{
 
 	public function verClasificados(){
 		$this->load->view('plantilla/encabezado');
-		$this->load->view('clasificados_view');
+		$this->load->view('ver_clasificados_view');
+		$this->load->view('plantilla/pie');
+	}
+
+	public function crearClasificados(){
+		$this->load->view('plantilla/encabezado');
+		$this->load->view('crear_clasificados_view');
 		$this->load->view('plantilla/pie');
 	}
 
