@@ -8,7 +8,6 @@ hr {
   $this->load->model('admin_model');
 
   if(isset($_GET['id'])){
-    $indice = $_GET['id']-1;
     $noticia = $this->admin_model->getNoticia($_GET['id']);
   }
 
@@ -20,15 +19,15 @@ hr {
   <h2><center>Agregar noticia</center></h2>
   <hr/>
   <form method = "post" enctype="multipart/form-data">
-    <input type="hidden" value="<?php echo( isset($_GET['id']) )?$noticia[$indice]['id_noticia']:'0'; ?>" name="id"/>
+    <input type="hidden" value="<?php echo( isset($_GET['id']) )?$noticia[0]['id_noticia']:'0'; ?>" name="id"/>
     <div class="col col-sm-8 col-sm-offset-2">
       <div class="form-group input-group">
         <span class="input-group-addon"><span class="glyphicon glyphicon-bookmark"></span></span>
-        <input id="titulo" type="text" class="form-control" name="titulo" placeholder="Título" value="<?php echo( isset($_GET['id']) )?$noticia[$indice]['titulo']:''; ?>" required>
+        <input id="titulo" type="text" class="form-control" name="titulo" placeholder="Título" value="<?php echo( isset($_GET['id']) )?$noticia[0]['titulo']:''; ?>" required>
       </div>
       <div class="form-group input-group">
         <span class="input-group-addon"><span class="glyphicon glyphicon-comment"></span></span>
-        <input id="resumen" type="text" class="form-control" name="resumen" placeholder="Resumen" value="<?php echo( isset($_GET['id']) )?$noticia[$indice]['resumen']:''; ?>"required>
+        <input id="resumen" type="text" class="form-control" name="resumen" placeholder="Resumen" value="<?php echo( isset($_GET['id']) )?$noticia[0]['resumen']:''; ?>"required>
       </div>
       <div class="form-group input-group">
         <span class="input-group-addon"><span class="glyphicon glyphicon-picture"></span></span>
@@ -36,7 +35,7 @@ hr {
       </div>
       <div>
         <h4>Cuerpo de la noticia:</h4>
-        <textarea id="texto" name="texto"><?php echo( isset($_GET['id']) )?$noticia[$indice]['cuerpo']:''; ?></textarea>
+        <textarea id="texto" name="texto"><?php echo( isset($_GET['id']) )?$noticia[0]['cuerpo']:''; ?></textarea>
       </div>
       <br>
       <div>

@@ -18,7 +18,7 @@ class Admin extends CI_Controller{
   }
 
   public function noticias($id=0){
-    if(isset($_POST['titulo'])){
+    if(isset($_POST['publicar'])){
       $id = $_POST['id'];
       $titulo = $_POST['titulo'];
       $resumen = $_POST['resumen'];
@@ -26,17 +26,31 @@ class Admin extends CI_Controller{
       $foto = $_FILES['foto']['name'];
 
       if($id==0){ //SE SE ESTÁ CREANDO
-
-        if($_FILES['foto']['error']==0){ //SI NO HAY ERRORES
+        if($foto!=''){ // SI SE SUBIÓ UNA FOTO
+          if($_FILES['foto']['error']==0){ //SI NO HAY ERRORES
+            $this->admin_model->guardarNoticia($titulo,$resumen,$foto,$texto);
+            redirect('admin/noticias');
+          }
+        }else{ // SI NO SE SUBIÓ UNA FOTO
           $this->admin_model->guardarNoticia($titulo,$resumen,$foto,$texto);
           redirect('admin/noticias');
         }
 
+
       }else if($id>0){ //SE ESTÁ EDITANDO
+        if($foto!=''){ // SI SE SUBIÓ UNA FOTO
+          if($_FILES['foto']['error']==0){ //SI NO HAY ERRORES
+            $this->admin_model->editarNoticia($id,$titulo,$resumen,$foto,$texto);
+            redirect('admin/noticias');
+          }
+        }else{ // SI NO SE SUBIÓ UNA FOTO
           $this->admin_model->editarNoticia($id,$titulo,$resumen,$foto,$texto);
           redirect('admin/noticias');
+        }
       }
 
+    }else if(isset($_POST['nuevo'])){
+      redirect('admin/noticias');
     }
 
 

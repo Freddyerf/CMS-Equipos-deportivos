@@ -28,7 +28,8 @@ class Admin_model extends CI_Model{
   }
 
   public function getNoticia($id){
-    $query = $this->db->get('noticias')->result_array();
+    $sql = "SELECT * FROM noticias WHERE id_noticia = ?";
+    $query = $this->db->query($sql, $id)->result_array();
 
     return $query;
   }
