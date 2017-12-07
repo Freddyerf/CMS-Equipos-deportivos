@@ -10,11 +10,14 @@ class Admin extends CI_Controller{
     $this->load->model('admin_model');
   }
 
-  function index()
-  {
+  function index(){
+    if(!$this->session->userdata('cedula') ){ // SI NO ESTÁ LOGUEADO
+      redirect('web');
+    }else{
     $this->load->view('admin/plantilla/encabezado_adm');
     $this->load->view('admin/noticias_adm_view');
     $this->load->view('admin/plantilla/pie_adm');
+    }
   }
 
   public function noticias($id=0){
@@ -53,10 +56,13 @@ class Admin extends CI_Controller{
       redirect('admin/noticias');
     }
 
-
+    if(!$this->session->userdata('cedula') ){ // SI NO ESTÁ LOGUEADO
+      redirect('web');
+    }else{
     $this->load->view('admin/plantilla/encabezado_adm');
     $this->load->view('admin/noticias_adm_view');
     $this->load->view('admin/plantilla/pie_adm');
+    }
   }
 
   public function eventos($id=0){
@@ -94,34 +100,53 @@ class Admin extends CI_Controller{
       redirect('admin/eventos');
     }
 
-
+    if(!$this->session->userdata('cedula') ){ // SI NO ESTÁ LOGUEADO
+      redirect('web');
+    }else{
     $this->load->view('admin/plantilla/encabezado_adm');
     $this->load->view('admin/eventos_adm_view');
     $this->load->view('admin/plantilla/pie_adm');
+    }
   }
 
   public function miembros(){
+    if(!$this->session->userdata('cedula') ){ // SI NO ESTÁ LOGUEADO
+      redirect('web');
+    }else{
     $this->load->view('admin/plantilla/encabezado_adm');
     $this->load->view('admin/miembros_adm_view');
     $this->load->view('admin/plantilla/pie_adm');
+    }
   }
 
   public function galeria(){
+    if(!$this->session->userdata('cedula') ){ // SI NO ESTÁ LOGUEADO
+      redirect('web');
+    }else{
     $this->load->view('admin/plantilla/encabezado_adm');
     $this->load->view('admin/galeria_adm_view');
     $this->load->view('admin/plantilla/pie_adm');
+    }
   }
 
   public function clasificados(){
+    if(!$this->session->userdata('cedula') ){ // SI NO ESTÁ LOGUEADO
+      redirect('web');
+    }else{
     $this->load->view('admin/plantilla/encabezado_adm');
     $this->load->view('admin/clasificados_adm_view');
     $this->load->view('admin/plantilla/pie_adm');
+    }
   }
 
   public function contacto(){
+    if(!$this->session->userdata('cedula') ){ // SI NO ESTÁ LOGUEADO
+      redirect('web');
+    }else{
     $this->load->view('admin/plantilla/encabezado_adm');
     $this->load->view('admin/contacto_adm_view');
     $this->load->view('admin/plantilla/pie_adm');
+    }
   }
 
   public function faq(){
@@ -143,10 +168,13 @@ class Admin extends CI_Controller{
         redirect('admin/faq');
       }
 
-
+    if(!$this->session->userdata('cedula') ){ // SI NO ESTÁ LOGUEADO
+      redirect('web');
+    }else{
     $this->load->view('admin/plantilla/encabezado_adm');
     $this->load->view('admin/faq_adm_view');
     $this->load->view('admin/plantilla/pie_adm');
+    }
   }
 
   public function administradores(){
@@ -168,9 +196,13 @@ define('LOGO','{$_FILES['foto']['name']}');
 			file_put_contents("application/config/settings.php",$infobdd);
     }
 
+    if(!$this->session->userdata('cedula') ){ // SI NO ESTÁ LOGUEADO
+      redirect('web');
+    }else{
     $this->load->view('admin/plantilla/encabezado_adm');
     $this->load->view('admin/parametros_adm_view');
     $this->load->view('admin/plantilla/pie_adm');
+    }
   }
 
 }

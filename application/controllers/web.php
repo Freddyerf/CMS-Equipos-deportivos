@@ -50,7 +50,7 @@ class Web extends CI_Controller{
 	}
 
 	public function contacto(){
-		if($_POST['name']){
+		if($_POST){
 			$this->load->model('web_model');
 			$this->web_model->guardarContacto($_POST['name'],$_POST['email'],$_POST['message']);
 			redirect('web/contacto');
