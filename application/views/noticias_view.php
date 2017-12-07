@@ -16,8 +16,8 @@
             <h2 class="post-title"><a href="<?= site_url('web/verNoticias') ?>"><?= $file->titulo ?></a></h2>
             <p class="post-contenido text-justify"><?= $file->resumen ?></p>
             <div class="contenedor-botones">
-              <a href="<?= site_url('web/verNoticias') ?>" class="btn btn-primary">Leer Mas</a>
-              <a href="<?= site_url('web/verNoticias') ?>" class="btn btn-success">Comentarios<span class="badge">5</span></a>
+              <a href="<?= site_url('web/verNoticias').'?id='.$file->id_noticia ?>" class="btn btn-primary">Leer Mas</a>
+              <a href="<?= site_url('web/verNoticias').'?id='.$file->id_noticia  ?>" class="btn btn-success">Comentarios<span class="badge">5</span></a>
             </div>
       </article>
     <?php } ?>

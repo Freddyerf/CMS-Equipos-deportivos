@@ -16,6 +16,13 @@ class Web_model extends CI_Model{
     return $query;
   }
 
+  public function getNoticia($id){
+    $sql = "SELECT * FROM noticias WHERE id_noticia = ?";
+    $query = $this->db->query($sql, $id)->result_array();
+
+    return $query;
+  }
+
   public function mostrarEventos(){
     $this->db->select('id_evento,titulo,fecha,hora,foto,cuerpo');
     $query = $this->db->get('eventos')->result();

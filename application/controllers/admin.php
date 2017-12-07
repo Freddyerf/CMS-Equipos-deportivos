@@ -14,9 +14,7 @@ class Admin extends CI_Controller{
     if(!$this->session->userdata('cedula') ){ // SI NO ESTÁ LOGUEADO
       redirect('web');
     }else{
-    $this->load->view('admin/plantilla/encabezado_adm');
-    $this->load->view('admin/noticias_adm_view');
-    $this->load->view('admin/plantilla/pie_adm');
+      redirect('admin/noticias');
     }
   }
 
@@ -38,7 +36,6 @@ class Admin extends CI_Controller{
           $this->admin_model->guardarNoticia($titulo,$resumen,$foto,$texto);
           redirect('admin/noticias');
         }
-
 
       }else if($id>0){ //SE ESTÁ EDITANDO
         if($foto!=''){ // SI SE SUBIÓ UNA FOTO
