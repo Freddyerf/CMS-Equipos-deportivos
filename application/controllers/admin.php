@@ -136,6 +136,14 @@ class Admin extends CI_Controller{
     }
   }
 
+  public function desactivarClasificados($id){
+    if(!$this->session->userdata('admin') ){ // SI NO ESTÁ LOGUEADO
+      redirect('web');
+    }else{
+      $this->admin_model->desactivarClasificados($id);
+    }
+  }
+
   public function contacto(){
     if(!$this->session->userdata('admin') ){ // SI NO ESTÁ LOGUEADO
       redirect('web');

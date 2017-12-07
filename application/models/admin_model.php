@@ -199,4 +199,15 @@ class Admin_model extends CI_Model{
     $this->db->query($sql, $id);
   }
 
+
+  public function activarClasificados($id){
+    $sql = "UPDATE clasificados SET estado = 1 WHERE id_clasificado = ?";
+    $this->db->query($sql, $id);
+  }
+
+  public function desactivarClasificados($id){
+    $sql = "UPDATE clasificados SET estado = 0 WHERE id_clasificado = ?";
+    $this->db->query($sql, $id);
+  }
+
 }
