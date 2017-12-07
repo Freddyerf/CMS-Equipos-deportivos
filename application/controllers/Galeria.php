@@ -20,7 +20,8 @@ class Galeria extends CI_Controller {
 
 		$settings['base_url'] = base_url('Galeria/index');
 		$settings['total_rows'] = $total;
-		$settings['per_page'] = 10;
+		$settings['per_page'] = 1;
+
 
 
 		$datos['galerias']=$this->galeria_model->buscarGalerias($settings['per_page'], $start_index);
