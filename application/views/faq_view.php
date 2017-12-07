@@ -1,6 +1,9 @@
-<script src="assets/js/modernizr.js"></script> <!-- Modernizr -->
-<link rel="stylesheet" href="assets/css/style.css"> <!-- Resource style -->
+
+
 <link rel="stylesheet" href="assets/css/reset.css"> <!-- CSS reset -->
+
+<link rel="stylesheet" href="assets/css/style.css"> <!-- Resource style -->
+<script src="assets/js/modernizr.js"></script> <!-- Modernizr -->
 
 <div class="container">
 <section class="cd-faq">

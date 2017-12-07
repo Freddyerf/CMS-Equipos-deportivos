@@ -7,9 +7,9 @@ class Registro_model extends CI_Model{
 		parent::__construct();
 	}
 
-	public function registrar($cedula,$nombre,$apellido,$tel,$email,$direccion,$lat,$long){
-    $sql = "INSERT INTO usuarios(cedula,nombre,apellido,telefono,correo,direccion,latitud,longitud) values(?, ?, ?, ?, ?, ?, ?, ?)";
-		$this->db->query($sql,array($cedula, $nombre, $apellido, $tel, $email, $direccion, $lat, $long));
+	public function registrar($cedula,$nombre,$apellido,$tel,$email,$direccion,$lat,$long,$pass){
+    $sql = "INSERT INTO usuarios(cedula,nombre,apellido,telefono,correo,direccion,latitud,longitud,password) values(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		$this->db->query($sql,array($cedula, $nombre, $apellido, $tel, $email, $direccion, $lat, $long,md5($pass)));
 
 	}
 
@@ -26,6 +26,17 @@ class Registro_model extends CI_Model{
 
 		return $rs;
 	}
+
+		public function verificarPass($pass1,$pass2){
+	 		$rs = false;
+	 		//verificar que coincidan las contraseñas
+	 		if($pass1 == $pass2){
+	 			$rs = true;
+	 		}else{
+	 			$rs = false;
+	 		}
+	 		return $rs;
+ 		}
 
     public function verificarCedula($cedula){
       $rs = true;

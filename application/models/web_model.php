@@ -23,4 +23,9 @@ class Web_model extends CI_Model{
     return $query;
   }
 
+  public function guardarContacto($nombre,$correo,$mensaje){
+    $sql = "INSERT INTO contactos(nombre,correo,mensaje) values(?, ?, ?)";
+    $this->db->query($sql, array($nombre,$correo,$mensaje));
+  }
+
 }

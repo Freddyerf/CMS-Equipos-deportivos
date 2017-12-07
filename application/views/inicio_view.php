@@ -32,21 +32,13 @@
               <tr>Eventos cercanos</tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Evento Validación</td>
-              </tr>
-              <tr>
-                <td>Evento Clasificatoria</td>
-              </tr>
-              <tr>
-                <td>Evento Semifinal</td>
-              </tr>
-              <tr>
-                <td>Evento Final</td>
-              </tr>
-              <tr>
-                <td>Evento Fiesta</td>
-              </tr>
+              <?php
+              $files = $CI->web_model->mostrarEventos(); ?>
+                <?php foreach($files as $file){ ?>
+                      <tr>
+                        <td><?= $file->titulo ?></td>
+                      </tr>
+              <?php } ?>
             </tbody>
           </table>
         </div>

@@ -50,6 +50,11 @@ class Web extends CI_Controller{
 	}
 
 	public function contacto(){
+		if($_POST['name']){
+			$this->load->model('web_model');
+			$this->web_model->guardarContacto($_POST['name'],$_POST['email'],$_POST['message']);
+			redirect('web/contacto');
+		}
 		$this->load->view('plantilla/encabezado');
 		$this->load->view('contacto_view');
 		$this->load->view('plantilla/pie');

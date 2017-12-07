@@ -9,14 +9,7 @@ hr {
   width: 100%;
  }
 </style>
-<?php
-$latituddelmapa = 18.3737;
-$longituddelmapa = -69.4342;
-  if(isset($_GET['lat']) && isset($_GET['lon'])){
-    $latituddelmapa = $_GET['lat'];
-    $longituddelmapa = $_GET['lon'];
-  }
- ?>
+
 <div class="container">
   <h2><center>Miembros</center></h2><hr/>
   <h4><strong>Listado de miembros:</strong></h4>
@@ -42,29 +35,30 @@ $longituddelmapa = -69.4342;
             }
         ?>
         <td>
-          <a href="<?php echo site_url('admin/miembros').'?lat='.$file->latitud.'&lon'.$file->longitud ?>" class='btn btn-primary'>Mapa</a>
+          <a href="#" onclick="initMap({lat: <?= $file->latitud?>, lng: <?= $file->longitud?>},'<?= $file->nombre?>')" class='btn btn-primary'>Mapa</a>
         </td>
         </tr>
 
-      <?php } ?>
+      <?php  } ?>
     </tbody>
   </table>
 </div>
 <div class="container">
   <h2><center>Mapa</center></h2><hr/>
   <div id="map"></div>
+
   <script>
-      function initMap() {
-      var i = 0;
-      var uluru = {lat: <?=$latituddelmapa?>, lng: <?=$longituddelmapa?>};
+      function initMap(coords={lat: 18.7717075, lng: -70.580649},titulo="República Dominicana") {
       var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 8,
-        center: uluru
+        center: coords
       });
-      var marker = new google.maps.Marker({
-        position: uluru,
-        map: map
-      });
+        var marker = new google.maps.Marker({
+        position: coords,
+        map: map,
+        title: titulo
+        });
+
     }
   </script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbgVz3sl_d9Lmnn1NUjlPf774D22Ni1lM&callback=initMap" async defer>

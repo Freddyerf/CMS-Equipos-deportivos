@@ -138,6 +138,12 @@
 
     <label for="mail">Correo electrónico:</label>
     <input type="email" id="mail" name="user_email" required>
+
+		<label for="password">Contraseña:</label>
+		<input type="password" id="password" name="user_password" required>
+
+		<label for="password1">Confirmar contraseña:</label>		
+		<input type="password" id="password1" name="user_password1" required>
   </fieldset>
 
   <fieldset>

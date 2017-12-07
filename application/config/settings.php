@@ -1,5 +1,5 @@
 <?php
-define('TITULO','Equipos deportivos');
-define('EQUIPO','Aguilas Cibaeñas');
+define('TITULO','Titulo de video');
+define('EQUIPO','Licey');
 define('LOGO','');
 			
