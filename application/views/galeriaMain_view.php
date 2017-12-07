@@ -13,9 +13,13 @@
 <?php
 	if($galerias!=null)
 	foreach($galerias as $file){?>
+	<?php 
+		$direccion='images/galeria/'.$file->nombreCarpeta."/";
+		$foto=scandir('images\galeria\\'.$file->nombreCarpeta)[2];
+	?>
 	<article class='post clearfix'>
             <a href="<?= site_url('web/verNoticias') ?>" class="thumb pull-left">
-                <img class="img-thumbnail" src="<?php echo base_url() ."images/noticia1.jpg"; ?>" alt="">
+                <img class="img-thumbnail" src="<?=$direccion.$foto?>" alt="">
             </a>
             <h2 class="post-title"><a href="<?= site_url('web/verNoticias').'?id='.$file->id ?>"><?= $file->nombre ?></a></h2>
             <p class="post-contenido text-justify"><?= $file->descripcion ?></p>

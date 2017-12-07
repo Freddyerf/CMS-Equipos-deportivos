@@ -1,5 +1,5 @@
-<?php var_dump($galeria)?>
-<h1>Crear Galeria</h1>
+<?php $titulo=(isset($galeria->id))?'Modificar':'Crear';?>
+<h1><?=$titulo?> Galeria: <?=(isset($galeria->nombre))? $galeria->nombre : ''?></h1>
 <form method="post" enctype='multipart/form-data'  
 action='<?=(isset($galeria->id))?'procesoActualizarGaleria':'procesoCrearGaleria'?>'>
 	<div>
@@ -32,7 +32,7 @@ action='<?=(isset($galeria->id))?'procesoActualizarGaleria':'procesoCrearGaleria
 				</div>
 			</div>
 		</div>
-		<input type='submit' class='btn btn-success' value='Crear Galeria'>
+		<input type='submit' class='btn btn-success' value='<?=$titulo?> Galeria'>
 		<a type='submit' class='btn btn-primary' href='<?=base_url('Galeria')?>'>Ir atras</a>
 	</div>
 </form>
