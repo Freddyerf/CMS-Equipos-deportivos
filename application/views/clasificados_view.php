@@ -21,7 +21,6 @@
             <h4 class="post-contenido text-justify"><strong>Contacto: </strong><?= $file->contacto ?></h4>
             <div class="contenedor-botones">
               <a href="<?= site_url('web/verClasificados').'?id='.$file->id_clasificado ?>" class="btn btn-primary">Leer Mas</a>
-              <a href="<?= site_url('web/verClasificados').'?id='.$file->id_clasificado  ?>" class="btn btn-success">Comentarios<span class="badge">5</span></a>
             </div>
       </article>
     <?php } ?>
