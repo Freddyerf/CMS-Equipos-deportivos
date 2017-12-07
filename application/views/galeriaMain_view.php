@@ -1,7 +1,8 @@
 <style>
 	a.final{
 		position:relative;
-		top:176px;
+		top:177px;
+		
 		
 	}
 </style>
@@ -20,7 +21,7 @@
             <h2 class="post-title"><a href="<?= site_url('web/verNoticias').'?id='.$file->id ?>"><?= $file->nombre ?></a></h2>
             <p class="post-contenido text-justify"><?= $file->descripcion ?></p>
             <div class="contenedor-botones">
-              <a href="<?= site_url('web/verNoticias').'?id='.$file->id ?>" class="btn btn-primary final">Ver Galeria</a>
+              <a href="<?= site_url('galeria/galeria').'?id='.$file->id ?>" class="btn btn-primary final">Ver Galeria</a>
             </div>
       </article>
 

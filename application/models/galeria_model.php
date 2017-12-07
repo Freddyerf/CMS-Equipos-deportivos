@@ -20,4 +20,10 @@ class galeria_model extends CI_Model{
 		$result=$this->ci->db->get('galeria')->result();
 		return $result;
 	}
+	
+	public function buscarGaleria($id){
+		$this->ci->db->where('id',$id);
+		$result=$this->ci->db->get('galeria')->result();
+		return $result[0];
+	}
 }

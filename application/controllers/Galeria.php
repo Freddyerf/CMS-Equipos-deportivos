@@ -20,8 +20,35 @@ class Galeria extends CI_Controller {
 		//$config['base_url'] = 'http://example.com/index.php/test/page/';	
 		$config['total_rows'] = 200;
 		$config['per_page'] = 10;
+		$config['full_tag_open'] = '
+		<nav>
+		<div class="center-block">
+        <ul class="pagination">
+		';
+		$config['full_tag_close'] = '
+			</ul>
+		  </div>
+		</nav>
+		';
+		$config['num_tag_open'] = '<li>';
+		$config['num_tag_close'] = '</li>';
+		$config['cur_tag_open'] = '<li class="active"><a href="#">';
+		$config['cur_tag_close'] = '</a></li>';
+		$config['next_tag_open'] = '<li>';
+		$config['next_tag_close'] = '</li>';
+		$config['first_tag_open'] = '<li>';
+		$config['first_tag_close'] = '</li>';
+		$config['last_tag_open'] = '<li>';
+		$config['last_tag_close'] = '</li>';
+		$config['next_link'] = '&raquo;';
+		$config['first_link'] = 'Inicio';
+		$config['last_link'] = 'Fin';
+		$config['prev_link'] = '&laquo;';
+		$config['prev_tag_open'] = '<li>';
+		$config['prev_tag_close'] = '</li>';
 		
 		$datos['galerias']=$this->galeria_model->buscarGalerias($idPaginacion);
+		
 		
 		$this->pagination->initialize($config);
 		
@@ -85,9 +112,18 @@ class Galeria extends CI_Controller {
 		$this->galeria_model->crearGaleria($galeria);
 	}
 	
-	public function buscarGaleria(){
+	public function galeria(){
 		if(!$_GET){
 			redirect('galeria');
 		}
+		$galeria=$this->galeria_model->buscarGaleria($_GET['id']);
+		if($galeria==null){
+			redirect('galeria');
+		}
+		$datos['galeria']=$galeria;
+		
+		$this->load->view('plantilla/encabezado');
+		$this->load->view('galeria_view',$datos);
+		$this->load->view('plantilla/pie');
 	}
 }
