@@ -17,29 +17,20 @@ class galeria_model extends CI_Model{
 		$result=$this->db->get('galerias')->result();
 		return $result;
 	}
-<<<<<<< HEAD
 
-	public function getNumGalerias(){
-    $query = $this->db->query("SELECT count(*) FROM galerias")->result_array();
-    return intval($query[0]['count(*)']);
-	}
-
-=======
-	
 	public function buscarGaleria($id){
-		$this->ci->db->where('id',$id);
-		$result=$this->ci->db->get('galeria')->result();
+		$this->db->where('id',$id);
+		$result=$this->db->get('galerias')->result();
 		return $result[0];
 	}
-	
+
 	public function eliminarGaleria($id){
-		$this->ci->db->where('id',$id);
-		$this->ci->db->delete('galeria');
+		$this->db->where('id',$id);
+		$this->db->delete('galerias');
 	}
-	
+
 	public function numeroRegistros(){
-		$this->ci->db->select('count(id) as resultado');
-		return $this->ci->db->get('galeria')->result()[0]->resultado;
+		$this->db->select('count(id) as resultado');
+		return $this->db->get('galerias')->result()[0]->resultado;
 	}
->>>>>>> 41999a2d4b646e8572266e5cc303086985baca94
 }

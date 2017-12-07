@@ -1,12 +1,7 @@
 <style>
 	div.contenedor-botones{
 		position:relative;
-<<<<<<< HEAD
-		top:176px;
-
-=======
 		top:177px;
->>>>>>> 41999a2d4b646e8572266e5cc303086985baca94
 	}
 </style>
 
@@ -34,18 +29,12 @@
       </article>
 
 <?php } ?>
-<<<<<<< HEAD
-<div class="center-block">
 <?=$links?>
-</div>
-=======
-<?=$creados?>
 <script>
-	
+
 	function eliminar(idEliminar,nombre){
 		if(confirm('Estas seguro que quieres borrar la galeria: '+ nombre)){
 			window.location='<?=base_url('galeria/galeria?eliminar=')?>'+ idEliminar;
 		}
 	}
 </script>
->>>>>>> 41999a2d4b646e8572266e5cc303086985baca94

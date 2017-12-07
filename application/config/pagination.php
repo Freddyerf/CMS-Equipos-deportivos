@@ -2,8 +2,11 @@
 $config['per_page'] = 10;
 $config["uri_segment"] = 3;
 
-$config['full_tag_open'] = '<ul class="pagination">';
-$config['full_tag_close'] = '</ul>';
+$config['full_tag_open'] = '<nav>
+		<div class="center-block">
+        <ul class="pagination">';
+
+$config['full_tag_close'] = '</ul></div></nav>';
 
 $config['first_link'] = 'Primera';
 $config['first_tag_open'] = '<li>';
