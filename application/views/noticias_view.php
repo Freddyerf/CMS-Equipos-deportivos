@@ -19,5 +19,5 @@
       </article>
     <?php } } ?>
   </div>
+  <?=$links?>
 </section>
-<?=$links?>
