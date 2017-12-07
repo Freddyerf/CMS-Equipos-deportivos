@@ -70,7 +70,8 @@ class Admin_model extends CI_Model{
   }
 
   public function getEvento($id){
-    $query = $this->db->get('eventos')->result_array();
+    $sql = "SELECT * FROM eventos WHERE id_evento = ?";
+    $query = $this->db->query($sql, $id)->result_array();
 
     return $query;
   }
