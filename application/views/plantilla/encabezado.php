@@ -63,6 +63,9 @@
 							<li><a href="<?= site_url('web/clasificados') ?>">Clasificados</a></li>
 							<li><a href="<?= site_url('web/contacto') ?>">Contacto</a></li>
 							<li><a href="<?= site_url('web/faq') ?>">FAQ</a></li>
+							<?php if ($this->session->userdata('cedula')){ ?>
+								<li><a href="<?= site_url('admin') ?>">Admin</a></li>
+							<?php } ?>
     		    </ul>
     		    <ul class="nav navbar-nav navbar-right">
 							<?php if ($this->session->userdata('cedula')){ ?>

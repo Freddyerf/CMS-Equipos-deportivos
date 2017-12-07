@@ -58,6 +58,7 @@
 							<li><a href="<?= site_url('admin/faq') ?>">FAQ</a></li>
 							<li><a href="<?= site_url('admin/administradores') ?>">Admin</a></li>
 							<li><a href="<?= site_url('admin/parametros') ?>">Parámetros</a></li>
+							<li><a href="<?= site_url('web') ?>">Web</a></li>
     		    </ul>
     		    <ul class="nav navbar-nav navbar-right">
         		  <li><a href="<?= site_url('login/logout') ?>"><span class="glyphicon glyphicon-log-out"></span> Cerrar sesión</a></li>

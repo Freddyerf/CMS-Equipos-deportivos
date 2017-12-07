@@ -10,11 +10,7 @@ class Web extends CI_Controller{
 	function index(){
 		$this->load->view('plantilla/encabezado');
 
-		if($this->session->userdata('admin') == 1 ){
-			redirect('admin');
-		}else{
 		$this->load->view('inicio_view');
-		}
 
 		$this->load->view('plantilla/pie');
 	}
