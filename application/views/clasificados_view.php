@@ -14,7 +14,8 @@
                 <img class="img-thumbnail" src="<?php echo base_url() ."images/noticia1.jpg"; ?>" alt="">
             </a>
             <h2 class="post-title"><a href="<?= site_url('web/verClasificados').'?id='.$file->id_clasificado ?>"><?= $file->titulo ?></a></h2>
-            <p class="post-contenido text-justify"><?= $file->descripcion ?></p>
+            <h4 class="post-contenido text-justify"><strong>Usuario: </strong><?= $file->usuario ?></h4>
+            <h4 class="post-contenido text-justify"><strong>Contacto: </strong><?= $file->contacto ?></h4>
             <div class="contenedor-botones">
               <a href="<?= site_url('web/verClasificados').'?id='.$file->id_clasificado ?>" class="btn btn-primary">Leer Mas</a>
               <a href="<?= site_url('web/verClasificados').'?id='.$file->id_clasificado  ?>" class="btn btn-success">Comentarios<span class="badge">5</span></a>

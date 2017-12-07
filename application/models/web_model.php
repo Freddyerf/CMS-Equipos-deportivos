@@ -56,4 +56,17 @@ class Web_model extends CI_Model{
     return $query;
   }
 
+  public function guardarClasificado($titulo,$descripcion,$imagenes,$fecha,$usuario,$contacto){
+    $sql = "INSERT INTO clasificados(titulo,descripcion,imagenes,fecha,usuario,contacto) values(?, ?, ?, ?, ?, ?)";
+    $this->db->query($sql, array($titulo,$descripcion,$imagenes,$fecha,$usuario,$contacto));
+
+  }
+
+  public function getUsuario($cedula){
+    $sql = "SELECT * FROM usuarios WHERE cedula = ?";
+    $query = $this->db->query($sql, $cedula)->result_array();
+
+    return $query;
+  }
+
 }

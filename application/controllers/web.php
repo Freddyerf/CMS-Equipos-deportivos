@@ -5,6 +5,7 @@ class Web extends CI_Controller{
 
 	public function __construct(){
 		parent::__construct();
+		$this->load->model('web_model');
 	}
 
 	function index(){
@@ -75,9 +76,36 @@ class Web extends CI_Controller{
 	}
 
 	public function crearClasificados(){
-		$this->load->view('plantilla/encabezado');
-		$this->load->view('crear_clasificados_view');
-		$this->load->view('plantilla/pie');
+		if(!$this->session->userdata('cedula')){ //SI NO ESTÁ LOGUEADO
+			redirect('web/clasificados');
+		}else{
+
+			if($_POST){
+				var_dump($_POST);
+				$id = $_POST['id'];
+				$titulo = $_POST['titulo'];
+				$usuario = $_POST['usuario'];
+				$contacto = $_POST['contacto'];
+				$fecha = $_POST['fecha'];
+				$descripcion = $_POST['descripcion'];
+				$foto = $_FILES['foto']['name'];
+
+				if($foto!=''){ // SI SE SUBIÓ UNA FOTO
+					if($_FILES['foto']['error']==0){ //SI NO HAY ERRORES
+						$this->web_model->guardarClasificado($titulo,$descripcion,$foto,$fecha,$usuario,$contacto);
+						redirect('web/clasificados');
+					}
+				}else{ // SI NO SE SUBIÓ UNA FOTO
+					$this->web_model->guardarClasificado($titulo,$descripcion,$foto,$fecha,$usuario,$contacto);
+					redirect('web/clasificados');
+				}
+			}
+
+			$this->load->view('plantilla/encabezado');
+			$this->load->view('crear_clasificados_view');
+			$this->load->view('plantilla/pie');
+		}
+
 	}
 
 }
