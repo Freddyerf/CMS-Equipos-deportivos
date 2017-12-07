@@ -63,7 +63,7 @@
 							<li><a href="<?= site_url('web/clasificados') ?>">Clasificados</a></li>
 							<li><a href="<?= site_url('web/contacto') ?>">Contacto</a></li>
 							<li><a href="<?= site_url('web/faq') ?>">FAQ</a></li>
-							<?php if ($this->session->userdata('cedula')){ ?>
+							<?php if ($this->session->userdata('admin')){ ?>
 								<li><a href="<?= site_url('admin') ?>">Admin</a></li>
 							<?php } ?>
     		    </ul>

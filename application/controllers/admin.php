@@ -11,7 +11,7 @@ class Admin extends CI_Controller{
   }
 
   function index(){
-    if(!$this->session->userdata('cedula') ){ // SI NO ESTÁ LOGUEADO
+    if(!$this->session->userdata('admin') ){ // SI NO ESTÁ LOGUEADO
       redirect('web');
     }else{
       redirect('admin/noticias');
@@ -53,7 +53,7 @@ class Admin extends CI_Controller{
       redirect('admin/noticias');
     }
 
-    if(!$this->session->userdata('cedula') ){ // SI NO ESTÁ LOGUEADO
+    if(!$this->session->userdata('admin') ){ // SI NO ESTÁ LOGUEADO
       redirect('web');
     }else{
     $this->load->view('admin/plantilla/encabezado_adm');
@@ -97,7 +97,7 @@ class Admin extends CI_Controller{
       redirect('admin/eventos');
     }
 
-    if(!$this->session->userdata('cedula') ){ // SI NO ESTÁ LOGUEADO
+    if(!$this->session->userdata('admin') ){ // SI NO ESTÁ LOGUEADO
       redirect('web');
     }else{
     $this->load->view('admin/plantilla/encabezado_adm');
@@ -107,7 +107,7 @@ class Admin extends CI_Controller{
   }
 
   public function miembros(){
-    if(!$this->session->userdata('cedula') ){ // SI NO ESTÁ LOGUEADO
+    if(!$this->session->userdata('admin') ){ // SI NO ESTÁ LOGUEADO
       redirect('web');
     }else{
     $this->load->view('admin/plantilla/encabezado_adm');
@@ -117,7 +117,7 @@ class Admin extends CI_Controller{
   }
 
   public function galeria(){
-    if(!$this->session->userdata('cedula') ){ // SI NO ESTÁ LOGUEADO
+    if(!$this->session->userdata('admin') ){ // SI NO ESTÁ LOGUEADO
       redirect('web');
     }else{
     $this->load->view('admin/plantilla/encabezado_adm');
@@ -127,7 +127,7 @@ class Admin extends CI_Controller{
   }
 
   public function clasificados(){
-    if(!$this->session->userdata('cedula') ){ // SI NO ESTÁ LOGUEADO
+    if(!$this->session->userdata('admin') ){ // SI NO ESTÁ LOGUEADO
       redirect('web');
     }else{
     $this->load->view('admin/plantilla/encabezado_adm');
@@ -137,7 +137,7 @@ class Admin extends CI_Controller{
   }
 
   public function contacto(){
-    if(!$this->session->userdata('cedula') ){ // SI NO ESTÁ LOGUEADO
+    if(!$this->session->userdata('admin') ){ // SI NO ESTÁ LOGUEADO
       redirect('web');
     }else{
     $this->load->view('admin/plantilla/encabezado_adm');
@@ -165,7 +165,7 @@ class Admin extends CI_Controller{
         redirect('admin/faq');
       }
 
-    if(!$this->session->userdata('cedula') ){ // SI NO ESTÁ LOGUEADO
+    if(!$this->session->userdata('admin') ){ // SI NO ESTÁ LOGUEADO
       redirect('web');
     }else{
     $this->load->view('admin/plantilla/encabezado_adm');
@@ -193,7 +193,7 @@ define('LOGO','{$_FILES['foto']['name']}');
 			file_put_contents("application/config/settings.php",$infobdd);
     }
 
-    if(!$this->session->userdata('cedula') ){ // SI NO ESTÁ LOGUEADO
+    if(!$this->session->userdata('admin') ){ // SI NO ESTÁ LOGUEADO
       redirect('web');
     }else{
     $this->load->view('admin/plantilla/encabezado_adm');
