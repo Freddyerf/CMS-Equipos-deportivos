@@ -2,22 +2,25 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class galeria_model extends CI_Model{
-	
-	private $ci;
-	
+
 	public function __construct(){
-		$this->ci=&get_instance();
 		parent::__construct();
 	}
-	
-	
+
+
 	public function crearGaleria($datos){
-		$this->ci->db->insert('galeria',$datos);
+		$this->db->insert('galerias',$datos);
 	}
-	
-	public function buscarGalerias($id){
-		$this->ci->db->limit(10,$id);
-		$result=$this->ci->db->get('galeria')->result();
+
+	public function buscarGalerias($porpag,$index){
+		$this->db->limit($porpag,$index);
+		$result=$this->db->get('galerias')->result();
 		return $result;
 	}
+
+	public function getNumGalerias(){
+    $query = $this->db->query("SELECT count(*) FROM galerias")->result_array();
+    return intval($query[0]['count(*)']);
+	}
+
 }

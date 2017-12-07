@@ -21,8 +21,6 @@
       </article>
     <?php } ?>
 
-    <nav>
-      <div class="center-block">
         <ul class="pagination">
           <li class="disabled"><a href="#">&laquo;<span class="sr-only">Anterior</span></a></li>
           <li class="active"><a href="#">1</a></li>
@@ -33,7 +31,11 @@
           <li><a href="#">6</a></li>
           <li><a href="#">&raquo;<span class="sr-only">Siguiente</span></a></li>
         </ul>
-      </div>
-    </nav>
+        <strong>1</strong>
+        <a href="http://localhost/CMS-Equipos-deportivos/Galeria/index/1" data-ci-pagination-page="2">2</a>
+        <a href="http://localhost/CMS-Equipos-deportivos/Galeria/index/2" data-ci-pagination-page="3">3</a>
+        <a href="http://localhost/CMS-Equipos-deportivos/Galeria/index/1" data-ci-pagination-page="2" rel="next">&gt;</a>
+        <a href="http://localhost/CMS-Equipos-deportivos/Galeria/index/19" data-ci-pagination-page="20">Last &rsaquo;
+        </a>
   </div>
 </section>

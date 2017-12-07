@@ -2,7 +2,7 @@
 	a.final{
 		position:relative;
 		top:176px;
-		
+
 	}
 </style>
 
@@ -10,7 +10,6 @@
 <a style='float:right'href='<?=base_url('Galeria/crearGaleria')?>' class='btn btn-success'>Crear Galeria</a>
 <div style='clear:left'></div>
 <?php
-	//var_dump($galerias);
 	if($galerias!=null)
 	foreach($galerias as $file){?>
 	<article class='post clearfix'>
@@ -25,4 +24,6 @@
       </article>
 
 <?php } ?>
-<?=$creados?>
+<div class="center-block">
+<?=$links?>
+</div>
