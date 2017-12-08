@@ -141,6 +141,9 @@ class Web extends CI_Controller{
 	}
 
 	public function verNoticias(){
+		if(isset($_POST['publicar'])){
+			$this->web_model->guardarComentario($_POST['newComentario'],$_POST['txid']);
+		}
 		$this->load->view('plantilla/encabezado');
 		$this->load->view('ver_noticia_view');
 		$this->load->view('plantilla/pie');

@@ -3,7 +3,7 @@
     <?php
     $CI= &get_instance();
     $CI->load->model('web_model');
-    
+
     if(isset($_GET['id'])){
       $noticia = $CI->web_model->getNoticia($_GET['id']);
       $comentarios = $CI->web_model->getComentarios($_GET['id']);
@@ -42,11 +42,13 @@
               ";
             }
             echo "
-                <tr>
+                <tr><form method='post' action=''>
                   <td><p>
                   <input type='textarea' placeholder='Escribe tu comentario aquí' value ='' name='newComentario' class='form-control'/>
+                  <input type='hidden' name='txid' value='{$_GET['id']}'>
                   </p></td>
-                  <td><a href=" .site_url('web/verNoticias') ."?id=" .$noticia[0]['id_noticia'] ." class='btn btn-primary'>Publicar</a></td>
+                  <td><button type='submit' class='btn btn-primary' name='publicar'>Publicar</button></td>
+                </form>
                 </tr>
             ";
           ?>

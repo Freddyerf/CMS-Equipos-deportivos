@@ -168,4 +168,9 @@ class Web_model extends CI_Model{
     return $query;
   }
 
+  public function guardarComentario($comentario,$id){
+    $sql = "INSERT INTO comentarios(comentario,id_noticia) values(?, ?)";
+    $this->db->query($sql, array($comentario,$id));
+  }
+
 }
