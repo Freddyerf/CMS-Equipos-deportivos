@@ -43,8 +43,26 @@ class Web extends CI_Controller{
 	}
 
 	public function eventos(){
+
+		$start_index = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+		$total = $this->web_model->numeroEventos();
+
+		$this->config->load('pagination', TRUE);
+		$settings = $this->config->item('pagination');
+
+		$settings['base_url'] = base_url('web/eventos');
+		$settings['total_rows'] = $total;
+		$settings['per_page'] = 5;
+
+
+		$datos['eventos']=$this->web_model->buscarEventos($settings['per_page'], $start_index);
+
+		$this->pagination->initialize($settings);
+
+		$datos['links']=$this->pagination->create_links();
+
 		$this->load->view('plantilla/encabezado');
-		$this->load->view('eventos_view');
+		$this->load->view('eventos_view',$datos);
 		$this->load->view('plantilla/pie');
 	}
 
@@ -61,8 +79,25 @@ class Web extends CI_Controller{
 	}
 
 	public function clasificados(){
+		$start_index = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+		$total = $this->web_model->numeroClasificados();
+
+		$this->config->load('pagination', TRUE);
+		$settings = $this->config->item('pagination');
+
+		$settings['base_url'] = base_url('web/clasificados');
+		$settings['total_rows'] = $total;
+		$settings['per_page'] = 5;
+
+
+		$datos['clasificados']=$this->web_model->buscarClasificados($settings['per_page'], $start_index);
+
+		$this->pagination->initialize($settings);
+
+		$datos['links']=$this->pagination->create_links();
+
 		$this->load->view('plantilla/encabezado');
-		$this->load->view('clasificados_view');
+		$this->load->view('clasificados_view',$datos);
 		$this->load->view('plantilla/pie');
 	}
 
