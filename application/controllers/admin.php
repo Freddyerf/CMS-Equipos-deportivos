@@ -29,8 +29,9 @@ class Admin extends CI_Controller{
       if($id==0){ //SE SE ESTÁ CREANDO
         if($foto!=''){ // SI SE SUBIÓ UNA FOTO
           if($_FILES['foto']['error']==0){ //SI NO HAY ERRORES
-            $this->admin_model->guardarNoticia($titulo,$resumen,$foto,$texto);
-            move_uploaded_file($_FILES['foto']['tmp_name'], "images/noticias/{$id}{$foto}");
+            $nombrefoto=$id.$foto;
+            $this->admin_model->guardarNoticia($titulo,$resumen,$nombrefoto,$texto);
+            move_uploaded_file($_FILES['foto']['tmp_name'], "images/noticias/{$nombrefoto}");
             redirect('admin/noticias');
           }
         }else{ // SI NO SE SUBIÓ UNA FOTO
@@ -41,8 +42,9 @@ class Admin extends CI_Controller{
       }else if($id>0){ //SE ESTÁ EDITANDO
         if($foto!=''){ // SI SE SUBIÓ UNA FOTO
           if($_FILES['foto']['error']==0){ //SI NO HAY ERRORES
-            $this->admin_model->editarNoticia($id,$titulo,$resumen,$foto,$texto);
-            move_uploaded_file($_FILES['foto']['tmp_name'], "images/noticias/{$id}{$foto}");
+            $nombrefoto=$id.$foto;
+            $this->admin_model->editarNoticia($id,$titulo,$resumen,$nombrefoto,$texto);
+            move_uploaded_file($_FILES['foto']['tmp_name'], "images/noticias/{$nombrefoto}");
             redirect('admin/noticias');
           }
         }else{ // SI NO SE SUBIÓ UNA FOTO
@@ -76,8 +78,9 @@ class Admin extends CI_Controller{
       if($id==0){ //SE SE ESTÁ CREANDO
         if($foto!=''){ // SI SE SUBIÓ UNA FOTO
           if($_FILES['foto']['error']==0){ //SI NO HAY ERRORES
-            $this->admin_model->guardarEvento($titulo,$fecha,$hora,$foto,$descripcion);
-            move_uploaded_file($_FILES['foto']['tmp_name'], "images/eventos/{$id}{$foto}");
+            $nombrefoto=$id.$foto;
+            $this->admin_model->guardarEvento($titulo,$fecha,$hora,$nombrefoto,$descripcion);
+            move_uploaded_file($_FILES['foto']['tmp_name'], "images/eventos/{$nombrefoto}");
             redirect('admin/eventos');
           }
         }else {
@@ -88,8 +91,9 @@ class Admin extends CI_Controller{
       else if($id>0){ //SE ESTÁ EDITANDO
         if($foto!=''){ // SI SE SUBIÓ UNA FOTO
           if($_FILES['foto']['error']==0){ //SI NO HAY ERRORES
-            $this->admin_model->editarEvento($id,$titulo,$fecha,$hora,$foto,$descripcion);
-            move_uploaded_file($_FILES['foto']['tmp_name'], "images/eventos/{$id}{$foto}");
+            $nombrefoto=$id.$foto;
+            $this->admin_model->editarEvento($id,$titulo,$fecha,$hora,$nombrefoto,$descripcion);
+            move_uploaded_file($_FILES['foto']['tmp_name'], "images/eventos/{$nombrefoto}");
             redirect('admin/eventos');
           }
         }else {

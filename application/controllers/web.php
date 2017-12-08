@@ -36,7 +36,6 @@ class Web extends CI_Controller{
 
 		$datos['links']=$this->pagination->create_links();
 
-
 		$this->load->view('plantilla/encabezado');
 		$this->load->view('noticias_view',$datos);
 		$this->load->view('plantilla/pie');
@@ -64,6 +63,14 @@ class Web extends CI_Controller{
 		$this->load->view('plantilla/encabezado');
 		$this->load->view('eventos_view',$datos);
 		$this->load->view('plantilla/pie');
+	}
+
+	public function asistirEvento($asistir=0,$evento=0){
+		if($asistir>0){
+			$this->web_model->asistirEvento($asistir,$evento);
+			var_dump($this->web_model->asisteEvento($asistir,$evento));
+			redirect('web/eventos');
+		}
 	}
 
 	public function miembros(){
@@ -147,8 +154,9 @@ class Web extends CI_Controller{
 
 				if($foto!=''){ // SI SE SUBIÓ UNA FOTO
 					if($_FILES['foto']['error']==0){ //SI NO HAY ERRORES
-						$this->web_model->guardarClasificado($titulo,$descripcion,$foto,$fecha,$usuario,$contacto);
-						move_uploaded_file($_FILES['foto']['tmp_name'], "images/clasificados/{$id}{$foto}");
+						$nombrefoto=$id.$foto;
+						$this->web_model->guardarClasificado($titulo,$descripcion,$nombrefoto,$fecha,$usuario,$contacto);
+						move_uploaded_file($_FILES['foto']['tmp_name'], "images/clasificados/{$nombrefoto}");
 						redirect('web/clasificados');
 					}
 				}else{ // SI NO SE SUBIÓ UNA FOTO
