@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width= device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0">
 		<title><?= $this->config->item('titulo') ?></title>
-		<link rel="shortcut icon" href="<?php echo base_url() ."images/logo.ico" ?>">
+		<link rel="shortcut icon" href="<?php echo base_url() .$this->config->item('logo') ?>">
 		<style>
 			.centro{
 				min-height: 300px;

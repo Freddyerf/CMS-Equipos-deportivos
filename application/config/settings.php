@@ -1,5 +1,5 @@
 <?php
-define('TITULO','Titulo de video');
-define('EQUIPO','Escogido Campeon');
-define('LOGO','');
-			
+define('TITULO','asdf');
+define('EQUIPO','asdf');
+define('LOGO','images/iconos/olimpycs.ico');
+      
