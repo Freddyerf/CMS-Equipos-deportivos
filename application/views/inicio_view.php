@@ -1,7 +1,7 @@
   <section class="posts col-md-9">
     <div class="miga-de-pan">
       <ol class="breadcrumb">
-        <li><a href="#">Inicio</a></li>
+        <li><a href="<?= site_url('web') ?>">Inicio</a></li>
       </ol>
 
       <?php
@@ -23,50 +23,25 @@
       <?php $count = $count -1; } } ?>
     </div>
   </section>
-
-      <div class="col-xs-2 col-xs-offset-0">
-        <div class="row">
-          <table class="table table-bordered">
-            <thead>
-              <tr>Eventos cercanos</tr>
-            </thead>
-            <tbody>
-              <?php
-              $files = $CI->web_model->mostrarEventos(); ?>
-                <?php foreach($files as $file){ ?>
-                      <tr>
-                        <td><?= $file->titulo ?></td>
-                      </tr>
-              <?php } ?>
-            </tbody>
-          </table>
-        </div>
-        <div class="row">
-          <table class="table table-bordered">
-            <thead>
-              <tr>Anuncios Clasificados</tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Gatorade</td>
-              </tr>
-              <tr>
-                <td>Cool Heaven</td>
-              </tr>
-              <tr>
-                <td>Coca Cola</td>
-              </tr>
-              <tr>
-                <td>Clorets</td>
-              </tr>
-              <tr>
-                <td>Memerize</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-      </div>
+<aside class="col-md-3 hidden-xs hidden-sm">
+  <h4>Eventos cercanos</h4>
+  <div class="list-group">
+    <?php
+    $files = $CI->web_model->mostrarEventos(); ?>
+      <?php foreach($files as $file){ ?>
+            <a href="#" class="list-group-item"><?= $file->titulo ?></a>
+    <?php } ?>
+  </div>
+  <h4>Anuncios Clasificados</h4>
+  <?php
+  $files = $CI->web_model->mostrarClasificados(); ?>
+    <?php foreach($files as $file){ ?>
+          <a href="#" class="list-group-item">
+            <h4 class="list-group-item-heading"><?= $file->titulo ?></h4>
+            <p class="list-group-item-text"><?= $file->usuario ?> - <?= $file->contacto ?></p>
+          </a>
+  <?php } ?>
+</aside>
     </div>
   </div>
 </div>

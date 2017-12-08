@@ -1,7 +1,7 @@
 <section class="center-block">
   <div class="miga-de-pan">
     <ol class="breadcrumb">
-      <li><a href="#">Noticias</a></li>
+      <li><a href="<?= site_url('web/noticias') ?>">Noticias</a></li>
     </ol>
 
     <?php
