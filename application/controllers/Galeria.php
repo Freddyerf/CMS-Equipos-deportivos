@@ -46,9 +46,9 @@ class Galeria extends CI_Controller {
 		$galeria['id']=$this->input->post('txid');
 		$galeria['nombre']=$this->input->post('txtitulo');
 		$galeria['descripcion']=$this->input->post('txdescripcion');
-		
+
 		$this->galeria_model->actualizarGaleria($galeria);
-		
+
 		redirect('galeria');
 	}
 	public function procesoCrearGaleria(){
@@ -62,6 +62,8 @@ class Galeria extends CI_Controller {
 		$galeria['descripcion']=$this->input->post('txdescripcion');
 		$galeria['nombreCarpeta']=$carpeta;
 		$this->input->post('flimagenes');
+
+		var_dump($galeria);
 
 
 		mkdir('images/galeria/'.$carpeta);

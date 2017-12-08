@@ -13,15 +13,15 @@
 <?php
 	if($galerias!=null)
 	foreach($galerias as $file){?>
-	<?php 
+	<?php
 		$direccion=base_url().'images/galeria/'.$file->nombreCarpeta."/";
 		$foto=scandir('images\galeria\\'.$file->nombreCarpeta)[2];
 	?>
 	<article class='post clearfix'>
-            <a href="<?= site_url('web/verNoticias') ?>" class="thumb pull-left">
+            <a href="<?= site_url('galeria/galeria').'?id='.$file->id  ?>" class="thumb pull-left">
                 <img class="img-thumbnail" src="<?=$direccion.$foto?>" alt="">
             </a>
-            <h2 class="post-title"><a href="<?= site_url('web/verNoticias').'?id='.$file->id ?>"><?= $file->nombre ?></a></h2>
+            <h2 class="post-title"><a href="<?= site_url('galeria/galeria').'?id='.$file->id  ?>"><?= $file->nombre ?></a></h2>
             <p class="post-contenido text-justify"><?= $file->descripcion ?></p>
             <div class="contenedor-botones">
               <a href="<?= site_url('galeria/galeria').'?id='.$file->id ?>" class="btn btn-primary">Ver Galeria</a>
