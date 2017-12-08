@@ -14,7 +14,7 @@
 	if($galerias!=null)
 	foreach($galerias as $file){?>
 	<?php 
-		$direccion='images/galeria/'.$file->nombreCarpeta."/";
+		$direccion=base_url().'images/galeria/'.$file->nombreCarpeta."/";
 		$foto=scandir('images\galeria\\'.$file->nombreCarpeta)[2];
 	?>
 	<article class='post clearfix'>
