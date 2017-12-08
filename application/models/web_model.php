@@ -45,18 +45,6 @@ class Web_model extends CI_Model{
     return $query;
   }
 
-  public function buscarEventos($porpag,$index){
-    $this->db->limit($porpag,$index);
-    $this->db->order_by('id_evento', 'desc');
-    $result=$this->db->get('eventos')->result();
-    return $result;
-  }
-
-  public function numeroEventos(){
-    $this->db->select('count(*) as resultado');
-    return $this->db->get('eventos')->result()[0]->resultado;
-  }
-
   public function guardarContacto($nombre,$correo,$mensaje){
     $sql = "INSERT INTO contactos(nombre,correo,mensaje) values(?, ?, ?)";
     $this->db->query($sql, array($nombre,$correo,$mensaje));
@@ -74,18 +62,6 @@ class Web_model extends CI_Model{
     $query = $this->db->query($sql)->result();
 
     return $query;
-  }
-
-  public function buscarClasificados($porpag,$index){
-    $this->db->limit($porpag,$index);
-    $this->db->order_by('id_clasificado', 'desc');
-    $result=$this->db->get('clasificados')->result();
-    return $result;
-  }
-
-  public function numeroClasificados(){
-    $this->db->select('count(*) as resultado');
-    return $this->db->get('clasificados')->result()[0]->resultado;
   }
 
   public function getClasificado($id){
