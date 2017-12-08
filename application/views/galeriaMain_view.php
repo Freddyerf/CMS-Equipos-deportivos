@@ -1,9 +1,3 @@
-<style>
-	div.contenedor-botones{
-		position:relative;
-		top:177px;
-	}
-</style>
 
 <h1 style="float:left">Galerias</h1>
 <?php if($this->session->userdata('admin')=='1'){//este if es para el administrador?>

@@ -45,10 +45,34 @@ class Web_model extends CI_Model{
     return $query;
   }
 
+  public function buscarEventos($porpag,$index){
+     $this->db->limit($porpag,$index);
+     $this->db->order_by('id_evento', 'desc');
+     $result=$this->db->get('eventos')->result();
+     return $result;
+   }
+
+   public function numeroEventos(){
+     $this->db->select('count(*) as resultado');
+     return $this->db->get('eventos')->result()[0]->resultado;
+   }
+
   public function guardarContacto($nombre,$correo,$mensaje){
     $sql = "INSERT INTO contactos(nombre,correo,mensaje) values(?, ?, ?)";
     $this->db->query($sql, array($nombre,$correo,$mensaje));
   }
+
+    public function buscarClasificados($porpag,$index){
+     $this->db->limit($porpag,$index);
+     $this->db->order_by('id_clasificado', 'desc');
+     $result=$this->db->get('clasificados')->result();
+     return $result;
+   }
+
+   public function numeroClasificados(){
+     $this->db->select('count(*) as resultado');
+     return $this->db->get('clasificados')->result()[0]->resultado;
+   }
 
   public function mostrarFAQ(){
     $this->db->select('id_faq,pregunta,respuesta');
@@ -92,7 +116,7 @@ class Web_model extends CI_Model{
   }
 
   public function usuariosAsistirEvento($id){
-    $sql = "SELECT DISTINCT usuarios.nombre, usuarios.apellido
+    $sql = "SELECT DISTINCT usuarios.nombre, usuarios.apellido, usuarios.telefono, usuarios.correo
               FROM asistir_evento
                 INNER JOIN usuarios
                   ON asistir_evento.id_usuario = usuarios.id_usuario
@@ -118,9 +142,22 @@ class Web_model extends CI_Model{
     return $query;
   }
 
+  public function getNombreEvento($id){
+    $sql = "SELECT titulo as resultado FROM eventos WHERE id_evento = ?";
+    $query = $this->db->query($sql, $id)->result()[0]->resultado;
+    return $query;
+  }
+
   public function getIdByCedula($cedula){
     $sql = "SELECT id_usuario as resultado FROM usuarios WHERE cedula = ?";
     $query = $this->db->query($sql, $cedula)->result()[0]->resultado;
+    return $query;
+  }
+
+  public function mostrarMiembros(){
+    $this->db->select('nombre,telefono,correo');
+    $query = $this->db->get('usuarios')->result();
+
     return $query;
   }
 

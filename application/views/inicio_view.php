@@ -29,14 +29,14 @@
     <?php
     $files = $CI->web_model->mostrarEventos(); ?>
       <?php foreach($files as $file){ ?>
-            <a href="#" class="list-group-item"><?= $file->titulo ?></a>
+            <a href="<?= site_url('web/eventos') ?>" class="list-group-item"><?= $file->titulo ?></a>
     <?php } ?>
   </div>
   <h4>Anuncios Clasificados</h4>
   <?php
   $files = $CI->web_model->mostrarClasificados(); ?>
     <?php foreach($files as $file){ ?>
-          <a href="#" class="list-group-item">
+          <a href="<?= site_url('web/verClasificados').'?id='.$file->id_clasificado ?>" class="list-group-item">
             <h4 class="list-group-item-heading"><?= $file->titulo ?></h4>
             <p class="list-group-item-text"><?= $file->usuario ?> - <?= $file->contacto ?></p>
           </a>

@@ -68,15 +68,30 @@ class Web extends CI_Controller{
 	public function asistirEvento($asistir=0,$evento=0){
 		if($asistir>0){
 			$this->web_model->asistirEvento($asistir,$evento);
-			var_dump($this->web_model->asisteEvento($asistir,$evento));
+			redirect('web/eventos');
+		}
+	}
+
+	public function verAsistirEvento($evento=0){
+		if(!empty($this->web_model->usuariosAsistirEvento($evento))){
+			$datos['evento'] = $evento;
+			$datos['titulo'] = $this->web_model->getNombreEvento($evento);
+			$this->load->view('plantilla/encabezado');
+			$this->load->view('ver_asistir_evento_view',$datos);
+			$this->load->view('plantilla/pie');
+		}else {
 			redirect('web/eventos');
 		}
 	}
 
 	public function miembros(){
-		$this->load->view('plantilla/encabezado');
-		$this->load->view('miembros_view');
-		$this->load->view('plantilla/pie');
+		if(!$this->session->userdata('cedula')){ //SI NO ESTÁ LOGUEADO
+			redirect('login');
+		}else{
+			$this->load->view('plantilla/encabezado');
+			$this->load->view('miembros_view');
+			$this->load->view('plantilla/pie');
+		}
 	}
 
 	public function galeria(){
