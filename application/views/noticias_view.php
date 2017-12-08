@@ -9,12 +9,12 @@
       <?php foreach($noticias as $file){ ?>
         <article class='post clearfix'>
             <a href="<?= site_url('web/verNoticias').'?id='.$file->id_noticia ?>" class="thumb pull-left">
-                <img class="img-thumbnai" src="<?php echo base_url() ."images/noticias/{$file->foto}"; ?>" alt="">
+                <img class="img-thumbnail" src="<?php echo base_url() ."images/noticias/{$file->foto}"; ?>" alt="">
             </a>
-            <h2 class="post-title"><a href="<?= site_url('web/verNoticias').'?id='.$file->id_noticia ?>"><?= $file->titulo ?></a></h2>
+            <h2 class="post-title"><a href="<?= site_url('web/verNoticias').'?id='.$file->id_noticia  ?>"><?= $file->titulo ?></a></h2>
             <p class="post-contenido text-justify"><?= $file->resumen ?></p>
             <div class="contenedor-botones">
-              <a href="<?= site_url('web/verNoticias').'?id='.$file->id_noticia ?>" class="btn btn-primary">Leer Mas</a>
+              <a href="<?= site_url('web/verNoticias').'?id='.$file->id_noticia  ?>" class="btn btn-primary">Leer Mas</a>
             </div>
       </article>
     <?php } } ?>

@@ -24,7 +24,7 @@
                   <?php echo ( empty($CI->Web_model->asisteEvento($iduser,$file->id_evento)))?'Asistir':'Darse de baja' ?>
                 </a>
               <?php } ?>
-              <a href="#" class="btn btn-success">Asistirán<span class="badge"><?=$CI->Web_model->numAsistirEvento($file->id_evento)?></span></a>
+              <a href="<?php echo site_url("web/verAsistirEvento/{$file->id_evento}") ?>" class="btn btn-success">Asistirán<span class="badge"><?=$CI->Web_model->numAsistirEvento($file->id_evento)?></span></a>
             </div>
       </article>
     <?php } } ?>
