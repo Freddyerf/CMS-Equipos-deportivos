@@ -208,6 +208,7 @@ class Admin extends CI_Controller{
 
       $config['upload_path']          = 'images/iconos/';
       $config['allowed_types']        = 'ico|gif';
+      $config['file_name'] 						= $_POST['nombre'];
       $config['max_size']             = 100;
       $config['max_width']            = 512;
       $config['max_height']           = 512;
@@ -215,7 +216,7 @@ class Admin extends CI_Controller{
       $infobdd = "<?php
 define('TITULO','{$_POST['titulo']}');
 define('EQUIPO','{$_POST['nombre']}');
-define('LOGO','images/iconos/{$_POST['nombre']}');
+define('LOGO','images/iconos/{$config['file_name']}');
       ";
       $this->load->library('upload', $config);
       $this->upload->initialize($config);
