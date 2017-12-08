@@ -61,7 +61,7 @@ hr {
         <th>Título</th>
         <th>Fecha</th>
         <th>Hora</th>
-        <th>Foto</th>
+        <th style="text-align: center;">Foto</th>
         <th>Act</th>
       </tr>
     </thead>
@@ -69,9 +69,22 @@ hr {
       <?php
         $files = $this->admin_model->mostrarEventos();
         foreach($files as $file){
+          $i=0;
           echo "<tr>";
             foreach($file as $campo){
-              echo "<td>{$campo}</td>";
+              if($i==4){
+                ?>
+                <td>
+                <div style="width: 100%; max-width: 300px; margin: auto;">
+                  <img style="width: 100%;height: auto;" src="<?php echo base_url() ."images/eventos/{$file->id_evento}{$file->foto}"; ?>" alt="">
+                </div>
+                </td>
+                <?php
+              }else {
+                echo "<td>{$campo}</td>";
+              }
+
+              $i++;
             }
         ?>
         <td>

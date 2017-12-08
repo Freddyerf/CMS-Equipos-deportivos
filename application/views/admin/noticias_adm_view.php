@@ -3,6 +3,7 @@ hr {
   border: 0.5px solid #282726;
   width: 80%;
 }
+
 </style>
 <?php
   $this->load->model('admin_model');
@@ -55,7 +56,7 @@ hr {
       <tr>
         <th>ID</th>
         <th>Título</th>
-        <th>Foto</th>
+        <th style="text-align: center;">Foto</th>
         <th>Act</th>
       </tr>
     </thead>
@@ -63,9 +64,22 @@ hr {
       <?php
         $files = $this->admin_model->mostrarNoticias();
         foreach($files as $file){
+          $i = 0;
           echo "<tr>";
             foreach($file as $campo){
-              echo "<td>{$campo}</td>";
+              if($i==2){
+                ?>
+                <td>
+                <div style="width: 100%; max-width: 300px; margin: auto;">
+                  <img style="width: 100%;height: auto;" src="<?php echo base_url() ."images/noticias/{$file->id_noticia}{$file->foto}"; ?>" alt="">
+                </div>
+                </td>
+                <?php
+              }else {
+                echo "<td>{$campo}</td>";
+              }
+
+              $i++;
             }
         ?>
         <td>
