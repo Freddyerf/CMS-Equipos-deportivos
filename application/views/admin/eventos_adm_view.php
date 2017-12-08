@@ -76,7 +76,7 @@ hr {
                 ?>
                 <td>
                 <div style="width: 100%; max-width: 300px; margin: auto;">
-                  <img style="width: 100%;height: auto;" src="<?php echo base_url() ."images/eventos/{$file->id_evento}{$file->foto}"; ?>" alt="">
+                  <img src="<?php echo base_url() ."images/eventos/{$file->foto}"; ?>" alt="">
                 </div>
                 </td>
                 <?php

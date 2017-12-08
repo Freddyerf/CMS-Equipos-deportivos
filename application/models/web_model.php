@@ -64,6 +64,13 @@ class Web_model extends CI_Model{
     return $result;
   }
 
+  public function getNombreEvento($id){
+    $sql = "SELECT titulo FROM eventos WHERE id_evento = ?";
+    $query = $this->db->query($sql, $id)->result()[0]->titulo;
+
+    return $query;
+  }
+
   public function guardarContacto($nombre,$correo,$mensaje){
     $sql = "INSERT INTO contactos(nombre,correo,mensaje) values(?, ?, ?)";
     $this->db->query($sql, array($nombre,$correo,$mensaje));
@@ -111,7 +118,7 @@ class Web_model extends CI_Model{
   }
 
   public function usuariosAsistirEvento($id){
-    $sql = "SELECT DISTINCT usuarios.nombre, usuarios.apellido
+    $sql = "SELECT DISTINCT usuarios.nombre, usuarios.apellido, usuarios.telefono, usuarios.correo
               FROM asistir_evento
                 INNER JOIN usuarios
                   ON asistir_evento.id_usuario = usuarios.id_usuario
@@ -137,13 +144,13 @@ class Web_model extends CI_Model{
     return $query;
   }
 
+
   public function getIdByCedula($cedula){
     $sql = "SELECT id_usuario as resultado FROM usuarios WHERE cedula = ?";
     $query = $this->db->query($sql, $cedula)->result()[0]->resultado;
     return $query;
   }
 
-<<<<<<< HEAD
   public function mostrarMiembros(){
     $this->db->select('nombre,telefono,correo');
     $query = $this->db->get('usuarios')->result();
@@ -156,6 +163,4 @@ class Web_model extends CI_Model{
     $this->db->query($sql, array($comentario,$id));
   }
 
-=======
->>>>>>> 22bbf67d35e978aed2993b7c9107b04b07a00712
 }

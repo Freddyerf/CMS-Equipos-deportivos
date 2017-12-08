@@ -1,7 +1,7 @@
 <style>
 hr {
   border: 0.5px solid #282726;
-  width: 20%;
+  width: 60%;
 }
 </style>
 
