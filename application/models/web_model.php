@@ -37,6 +37,13 @@ class Web_model extends CI_Model{
     return $query;
   }
 
+  public function getComentarios($id){
+    $sql = "SELECT comentario FROM comentarios WHERE id_noticia = ?";
+    $query = $this->db->query($sql, $id)->result_array();
+
+    return $query;
+  }
+
   public function mostrarEventos(){
     $this->db->select('id_evento,titulo,fecha,hora,foto,cuerpo');
     $this->db->order_by('id_evento', 'desc');
