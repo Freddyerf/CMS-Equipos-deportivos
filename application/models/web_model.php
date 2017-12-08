@@ -11,6 +11,7 @@ class Web_model extends CI_Model{
 
   public function mostrarNoticias(){
     $this->db->select('id_noticia,titulo,resumen,foto');
+    $this->db->order_by('id_noticia', 'desc');
     $query = $this->db->get('noticias')->result();
 
     return $query;
@@ -18,6 +19,7 @@ class Web_model extends CI_Model{
 
   public function buscarNoticias($porpag,$index){
     $this->db->limit($porpag,$index);
+    $this->db->order_by('id_noticia', 'desc');
     $result=$this->db->get('noticias')->result();
     return $result;
   }
@@ -37,6 +39,7 @@ class Web_model extends CI_Model{
 
   public function mostrarEventos(){
     $this->db->select('id_evento,titulo,fecha,hora,foto,cuerpo');
+    $this->db->order_by('id_evento', 'desc');
     $query = $this->db->get('eventos')->result();
 
     return $query;
