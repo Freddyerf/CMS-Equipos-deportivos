@@ -9,7 +9,7 @@
     } ?>
         <article class='post clearfix'>
           <h2 class="post-title"><?= $noticia[0]['titulo'] ?></h2>
-            <img class="img-thumbnail thumb pull-left" src="<?php echo base_url() ."images/noticias/{$noticia[0]['id_noticia']}{$noticia[0]['foto']}"; ?>" alt="">
+            <img class="img-thumbnail thumb pull-left" src="<?php echo base_url() ."images/noticias/{$noticia[0]['foto']}"; ?>" alt="">
             <p class="post-contenido text-justify"><?= $noticia[0]['cuerpo'] ?></p>
       </article>
 </section>

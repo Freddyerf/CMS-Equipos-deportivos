@@ -12,7 +12,7 @@
       <?php foreach($clasificados as $file){ ?>
         <article class='post clearfix'>
             <a href="<?= site_url('web/verClasificados').'?id='.$file->id_clasificado ?>" class="thumb pull-left">
-                <img class="img-thumbnail" src="<?php echo base_url() ."images/noticia1.jpg"; ?>" alt="">
+                <img class="img-thumbnail" src='<?php echo base_url() ."images/clasificados/{$file->imagenes}"?>' alt="">
             </a>
             <h2 class="post-title"><a href="<?= site_url('web/verClasificados').'?id='.$file->id_clasificado ?>"><?= $file->titulo ?></a></h2>
             <h4 class="post-contenido text-justify"><strong>Usuario: </strong><?= $file->usuario ?></h4>
