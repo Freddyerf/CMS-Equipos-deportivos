@@ -1,16 +1,16 @@
 <?php $titulo=(isset($galeria->id))?'Modificar':'Crear';?>
 <h1><?=$titulo?> Galeria: <?=(isset($galeria->nombre))? $galeria->nombre : ''?></h1>
-<form method="post" enctype='multipart/form-data'  
-action='<?=(isset($galeria->id))?'procesoActualizarGaleria':'procesoCrearGaleria'?>'>
+<form method="post" enctype='multipart/form-data'
+action='<?=(isset($galeria->id))?'procesoActualizarGaleria':'procesoCrearGaleria';?>'>
 	<div>
-		<?php echo (isset($galeria->id))? 
+		<?php echo (isset($galeria->id))?
 		"<input type='hidden' name='txid' value='{$galeria->id}'>"
 		: '';?>
 		<div class="row">
 			<div class='col col-md-6'>
 				<div class='input-group form-gruop'>
 					<label class='input-group-addon'>Titulo</label>
-					<input type='text' name='txtitulo' class='form-control' 
+					<input type='text' name='txtitulo' class='form-control'
 					value='<?php echo (isset($galeria->nombre))? $galeria->nombre : ''?>'/>
 				</div>
 			</div>
