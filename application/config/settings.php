@@ -1,5 +1,5 @@
 <?php
-define('TITULO','asdf');
-define('EQUIPO','asdf');
-define('LOGO','images/iconos/olimpycs.ico');
+define('TITULO','Basket');
+define('EQUIPO','Ball');
+define('LOGO','images/iconos/Ball');
       
