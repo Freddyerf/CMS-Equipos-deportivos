@@ -11,7 +11,7 @@
        foreach($eventos as $file){ ?>
         <article class='post clearfix'>
             <span class="thumb pull-left">
-                <img class="img-thumbnail" src="<?php echo base_url() ."images/eventos/{}{$file->foto}"; ?>" alt="">
+                <img class="img-thumbnail" src="<?php echo base_url() ."images/eventos/{$file->id_evento}{$file->foto}"; ?>" alt="">
             </span>
             <h2 class="post-title"><?= $file->titulo ?></h2>
             <p><span class="post-fecha"><?= $file->fecha ?></span> a las <span class="post-autor"><?= $file->hora ?></span></p>
