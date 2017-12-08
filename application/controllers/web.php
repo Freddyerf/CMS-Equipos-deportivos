@@ -60,7 +60,7 @@ class Web extends CI_Controller{
 
 		$datos['links']=$this->pagination->create_links();
 
-		$this->load->view('plantilla/encabezado');
+		$this->load	->view('plantilla/encabezado');
 		$this->load->view('eventos_view',$datos);
 		$this->load->view('plantilla/pie');
 	}

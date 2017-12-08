@@ -52,6 +52,18 @@ class Web_model extends CI_Model{
     return $query;
   }
 
+  public function numeroEventos(){
+    $this->db->select('count(*) as resultado');
+    return $this->db->get('eventos')->result()[0]->resultado;
+  }
+
+  public function buscarEventos($porpag,$index){
+    $this->db->limit($porpag,$index);
+    $this->db->order_by('id_evento', 'desc');
+    $result=$this->db->get('eventos')->result();
+    return $result;
+  }
+
   public function guardarContacto($nombre,$correo,$mensaje){
     $sql = "INSERT INTO contactos(nombre,correo,mensaje) values(?, ?, ?)";
     $this->db->query($sql, array($nombre,$correo,$mensaje));
