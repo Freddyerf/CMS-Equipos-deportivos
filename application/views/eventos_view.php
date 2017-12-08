@@ -11,7 +11,7 @@
       <?php foreach($files as $file){ ?>
         <article class='post clearfix'>
             <a href="#" class="thumb pull-left">
-                <img class="img-thumbnail" src="<?php echo base_url() ."images/noticia1.jpg"; ?>" alt="">
+                <img class="img-thumbnail" src="<?php echo base_url() ."images/eventos/{$file->id_evento}{$file->foto}"; ?>" alt="">
             </a>
             <h2 class="post-title"><a href="#"><?= $file->titulo ?></a></h2>
             <p><span class="post-fecha"><?= $file->fecha ?></span> a las <span class="post-autor"><?= $file->hora ?></span></p>

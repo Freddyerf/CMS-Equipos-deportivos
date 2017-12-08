@@ -10,6 +10,6 @@
         <article class='post clearfix'>
           <h2 class="post-title"><?= $clasificado[0]['titulo'] ?></h2>
             <p class="post-contenido text-justify"><?= $clasificado[0]['descripcion'] ?></p>
-            <img class="img-thumbnail thumb pull-left" src="<?php echo base_url() ."images/noticia1.jpg"; ?>" alt="">
+            <img class="img-thumbnail thumb pull-left" src="<?php echo base_url() ."images/clasificados/{$clasificado[0]['id_clasificado']}{$clasificado[0]['foto']}"; ?>" alt="">
       </article>
 </section>

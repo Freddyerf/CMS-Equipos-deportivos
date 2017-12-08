@@ -113,6 +113,7 @@ class Web extends CI_Controller{
 				if($foto!=''){ // SI SE SUBIÓ UNA FOTO
 					if($_FILES['foto']['error']==0){ //SI NO HAY ERRORES
 						$this->web_model->guardarClasificado($titulo,$descripcion,$foto,$fecha,$usuario,$contacto);
+						move_uploaded_file($_FILES['foto']['tmp_name'], "images/clasificados/{$id}{$foto}");
 						redirect('web/clasificados');
 					}
 				}else{ // SI NO SE SUBIÓ UNA FOTO

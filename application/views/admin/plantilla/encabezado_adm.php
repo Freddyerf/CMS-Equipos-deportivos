@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title><?= $this->config->item('titulo') ?></title>
-
+		<link rel="shortcut icon" href="<?php echo base_url() .$this->config->item('logo') ?>">
 		<style>
 			.centro{
 				min-height: 300px;

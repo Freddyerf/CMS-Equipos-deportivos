@@ -12,7 +12,7 @@
         <?php foreach($files as $file){ if($count!=0){?>
           <article class='post clearfix'>
               <a href="<?= site_url('web/verNoticias').'?id='.$file->id_noticia ?>" class="thumb pull-left">
-                  <img class="img-thumbnail" src="<?php echo base_url() ."images/noticia1.jpg"; ?>" alt="">
+                  <img class="img-thumbnail" src="<?php echo base_url() ."images/noticias/{$file->id_noticia}{$file->foto}"; ?>" alt="">
               </a>
               <h2 class="post-title"><a href="<?= site_url('web/verNoticias').'?id='.$file->id_noticia  ?>"><?= $file->titulo ?></a></h2>
               <p class="post-contenido text-justify"><?= $file->resumen ?></p>

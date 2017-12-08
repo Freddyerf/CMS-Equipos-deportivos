@@ -18,7 +18,7 @@ hr {
 <div class="container">
   <h2><center>Agregar noticia</center></h2>
   <hr/>
-  <form method = "post" enctype="multipart/form-data">
+  <form method = "post" action="noticias" enctype="multipart/form-data">
     <input type="hidden" value="<?php echo( isset($_GET['id']) )?$noticia[0]['id_noticia']:'0'; ?>" name="id"/>
     <div class="col col-sm-8 col-sm-offset-2">
       <div class="form-group input-group">

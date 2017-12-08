@@ -30,6 +30,7 @@ class Admin extends CI_Controller{
         if($foto!=''){ // SI SE SUBIÓ UNA FOTO
           if($_FILES['foto']['error']==0){ //SI NO HAY ERRORES
             $this->admin_model->guardarNoticia($titulo,$resumen,$foto,$texto);
+            move_uploaded_file($_FILES['foto']['tmp_name'], "images/noticias/{$id}{$foto}");
             redirect('admin/noticias');
           }
         }else{ // SI NO SE SUBIÓ UNA FOTO
@@ -41,6 +42,7 @@ class Admin extends CI_Controller{
         if($foto!=''){ // SI SE SUBIÓ UNA FOTO
           if($_FILES['foto']['error']==0){ //SI NO HAY ERRORES
             $this->admin_model->editarNoticia($id,$titulo,$resumen,$foto,$texto);
+            move_uploaded_file($_FILES['foto']['tmp_name'], "images/noticias/{$id}{$foto}");
             redirect('admin/noticias');
           }
         }else{ // SI NO SE SUBIÓ UNA FOTO
@@ -75,6 +77,7 @@ class Admin extends CI_Controller{
         if($foto!=''){ // SI SE SUBIÓ UNA FOTO
           if($_FILES['foto']['error']==0){ //SI NO HAY ERRORES
             $this->admin_model->guardarEvento($titulo,$fecha,$hora,$foto,$descripcion);
+            move_uploaded_file($_FILES['foto']['tmp_name'], "images/eventos/{$id}{$foto}");
             redirect('admin/eventos');
           }
         }else {
@@ -86,6 +89,7 @@ class Admin extends CI_Controller{
         if($foto!=''){ // SI SE SUBIÓ UNA FOTO
           if($_FILES['foto']['error']==0){ //SI NO HAY ERRORES
             $this->admin_model->editarEvento($id,$titulo,$fecha,$hora,$foto,$descripcion);
+            move_uploaded_file($_FILES['foto']['tmp_name'], "images/eventos/{$id}{$foto}");
             redirect('admin/eventos');
           }
         }else {
@@ -202,11 +206,25 @@ class Admin extends CI_Controller{
 
     if(isset($_POST['actualizar'])){
 
+      $config['upload_path']          = 'images/iconos/';
+      $config['allowed_types']        = 'ico|gif';
+      $config['max_size']             = 100;
+      $config['max_width']            = 512;
+      $config['max_height']           = 512;
+
       $infobdd = "<?php
 define('TITULO','{$_POST['titulo']}');
 define('EQUIPO','{$_POST['nombre']}');
-define('LOGO','{$_FILES['foto']['name']}');
-			";
+define('LOGO','images/iconos/{$_POST['nombre']}');
+      ";
+      $this->load->library('upload', $config);
+      $this->upload->initialize($config);
+
+      if ( ! $this->upload->do_upload('foto')){
+          $error = array('error' => $this->upload->display_errors());
+      }else{
+          $data = array('upload_data' => $this->upload->data());
+      }
 
 			file_put_contents("application/config/settings.php",$infobdd);
     }
