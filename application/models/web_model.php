@@ -108,4 +108,44 @@ class Web_model extends CI_Model{
     return $query;
   }
 
+  public function numAsistirEvento($id){
+    $sql = "SELECT count(*) as resultado FROM asistir_evento WHERE id_evento = ?";
+    $query = $this->db->query($sql, $id)->result()[0]->resultado;
+
+    return $query;
+  }
+
+  public function usuariosAsistirEvento($id){
+    $sql = "SELECT DISTINCT usuarios.nombre, usuarios.apellido
+              FROM asistir_evento
+                INNER JOIN usuarios
+                  ON asistir_evento.id_usuario = usuarios.id_usuario
+                    WHERE asistir_evento.id_evento = ?";
+    $query = $this->db->query($sql, $id)->result_array();
+
+    return $query;
+  }
+
+  public function asistirEvento($id_usuario,$id_evento){
+    if(!empty($this->asisteEvento($id_usuario,$id_evento))){
+      $sql = "DELETE FROM asistir_evento WHERE id_usuario = ? AND id_evento = ?";
+    }else {
+      $sql = "INSERT INTO asistir_evento(id_usuario,id_evento) values(?, ?)";
+    }
+    $this->db->query($sql, array($id_usuario,$id_evento));
+  }
+
+  public function asisteEvento($id_usuario,$id_evento){
+    $sql = "SELECT id_asistir_evento as resultado FROM asistir_evento WHERE id_usuario = ? AND id_evento = ?";
+    $query = $this->db->query($sql, array($id_usuario,$id_evento))->result_array();
+
+    return $query;
+  }
+
+  public function getIdByCedula($cedula){
+    $sql = "SELECT id_usuario as resultado FROM usuarios WHERE cedula = ?";
+    $query = $this->db->query($sql, $cedula)->result()[0]->resultado;
+    return $query;
+  }
+
 }

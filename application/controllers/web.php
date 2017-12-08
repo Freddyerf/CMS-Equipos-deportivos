@@ -36,7 +36,6 @@ class Web extends CI_Controller{
 
 		$datos['links']=$this->pagination->create_links();
 
-
 		$this->load->view('plantilla/encabezado');
 		$this->load->view('noticias_view',$datos);
 		$this->load->view('plantilla/pie');
@@ -64,6 +63,14 @@ class Web extends CI_Controller{
 		$this->load->view('plantilla/encabezado');
 		$this->load->view('eventos_view',$datos);
 		$this->load->view('plantilla/pie');
+	}
+
+	public function asistirEvento($asistir=0,$evento=0){
+		if($asistir>0){
+			$this->web_model->asistirEvento($asistir,$evento);
+			var_dump($this->web_model->asisteEvento($asistir,$evento));
+			redirect('web/eventos');
+		}
 	}
 
 	public function miembros(){
